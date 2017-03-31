@@ -1,0 +1,306 @@
+﻿h5.rows-title{
+        line-height: 17px;
+        color: #646464;
+        font-weight: 400;
+    }
+#editabledatatable .mold{
+     width: 210px !important
+}
+h5.rows-title::before{
+        display: block;
+        content: "";
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        width: 2px;
+        max-width: 2px;
+        overflow: hidden;
+        background-color: #2DC3E8; 
+    }
+h5.rows-title i{
+    margin-right: 5px
+}
+.widget{
+    margin:8px 0 0 8px !important;
+} 
+/*device->table 操作*/
+
+.bydtitle{
+    font-style:normal;
+    font-size:13px;
+}
+.handle-table{
+width: 320px !important;
+min-width:210px !important
+}
+
+.handle-table a{
+    background-color:transparent !important;
+    border:none !important;
+}
+.handle-table .edit{
+    color: #57B5E3 !important;
+}
+.handle-table .tup{
+    position: relative;
+    color: #57B5E3 !important;
+}
+.handle-table .data-add{
+    color: #57B5E3 !important;
+}
+.handle-table .sus{
+    color: #7d7d7d !important;
+}
+
+.handle-table .delete{
+    color: #D7827D !important
+}
+#editabledatatable .status{
+    width: 180px !important;
+}
+#editabledatatable .status .fa-circle{
+color:green !important;
+cursor: pointer;
+}
+#editabledatatable .status .fa{
+    font-size: 16px !important
+}
+#editabledatatable tbody td div{
+    display: block;
+    white-space:nowrap;
+     overflow:hidden; 
+     text-overflow:ellipsis !important;
+     width: 330px;
+}
+#editabledatatable .status div{
+    display: block;
+    white-space:nowrap;
+     overflow:hidden; 
+     text-overflow:ellipsis !important;
+     width: 170px !important;
+}
+
+.mold{
+    min-width: 85px !important
+}
+.center{
+    min-width: 90px !important
+} 
+/* search */
+#datatable-search::before{
+    font-family: "FontAwesome";
+    content: "\f002";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0px;
+    width: 30px;
+    max-width: 30px;
+    overflow: hidden;
+    color: #5db2ff;
+    text-align: center;
+    padding-top: 6px;
+}
+
+#datatable-search input{
+    padding-left: 28px !important
+}
+#editabledatatable tbody tr .data-checkbox{
+    width: 40px ;
+}
+
+.data-checkbox input{
+    margin: 5px 7px 7px 7px;
+   
+}
+.data-fass{
+    border: #ddd solid 1px !important;
+   position: relative;
+   height: 40px;
+   width: 45px
+}
+.data-fass input{
+    position: absolute;
+    left:0px;
+    top:3px;
+}
+.data-system{
+    width: 180px;
+}
+
+#editabledatatable .edit i{
+    margin: 0 0 2px 0;
+    padding: 0;
+    float: left;
+}
+#editabledatatable .fa-size{
+    font-size: 18px !important
+}
+#editabledatatable .sus{
+    background-color: #7d7d7d ;
+    border: none !important;
+    color: #fff !important
+}
+.data-checkbox label{
+    display: block;
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    position: relative;
+}
+.data-checkbox label input[type="checkbox"]{
+    position: absolute;
+    top:3px;
+    left: 0px;
+}
+.data-fass input[type="checkbox"]{
+    position: absolute;
+    top:4px;
+    left: 7px
+}
+/* login */
+.login-logo{
+    width:200px; 
+    height: 350px;
+    float: right;
+    border: solid 1px #333;
+}
+.login-logo img{
+    width: 200px;
+    margin-right: 30px
+}
+.loginbox-left{
+    float: left;
+    width: 318px;
+    height: 350px;
+    border: solid 1px #333;
+}
+.login-input{
+   
+    font-size: 16px;
+    color: #666;
+    margin: 30px 0;
+}
+.login-input input{
+    width: 230px !important;
+    height: 29px
+}
+.login-input i{
+    margin-right: 12px;
+}
+.byg-menu{
+    width: 200px !important
+}
+.byg-left{
+margin-left: -3px !important
+}
+#editabledatatable tbody td div {
+    line-height: 30px !important
+}
+#editabledatatable tbody tr td{
+    font-size:13px;
+    line-height: 30px !important;
+    height: 43px !important;
+    padding: 5px 8px 5px 8px!important
+}
+.modal-backdrop{
+background-color: #666 !important;
+}
+/* supply-tooltip */
+.supply-tooltip{
+width: 300px;
+height: 260px;
+border: solid 1px #333;
+}
+.byd-pop{
+    float: left;
+    width: 100%;
+    font-size: 13px;
+    border-bottom: solid 1px #ddd;
+}
+.byd-pop label,.byd-pop p{
+    float: left;
+    margin-left: 3px;
+}
+.byd-pop p{
+    line-height: 30px;
+    text-align: left;
+    width: 185px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+}
+.triangle{
+    position: absolute;
+    display: block;
+    left: 50%;
+    width:0px;
+    height: 0px;
+    border-style: solid 5px #666;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color:transparent; 
+}
+.supply-tool{
+    padding: 0px !important;
+    position: absolute;
+    top:-170px;
+    left: -130px;
+    width: 280px !important;
+     background-color: #fff!important;
+    z-index: 800;
+    border: 2px solid #CCCBCB;
+    border-radius: 3px;
+}
+.supply-tool h4{
+    text-align: left;
+    background-color: #fefefe;
+
+}
+.supp{
+    border:0px !important;
+    margin-top: -10px !important;
+    margin-left: 60px !important;
+    width: 300px !important
+}
+.supmain{
+    background-color: #fff;
+    min-height: 120px
+}
+.supmain label{
+    margin: 5px;
+    display: block;
+    float: left;
+}
+.suppbox{
+    width: 100%;
+    border-bottom: solid 1px #F2F2F2;
+}
+.supcpu, .suprate ,.supmore{
+    margin: 0;
+    padding: 0;
+}
+.supsan{
+    position: absolute;
+    top:150px;
+    left: 50%;
+    border: 10px solid #000;
+    width: 0% !important;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
+/* 加载图 */
+.byd-ajax-load{
+    display: block;
+    position:abslute;
+    width:100px;
+    height:20;
+    display:none;
+    z-index:4000
+}
+.byd-ajax-load img{
+    display: block;
+    z-index: 4000
+}

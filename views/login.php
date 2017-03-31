@@ -1,12 +1,7 @@
 <!DOCTYPE html>
-<!--
-Beyond Admin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3
-Version: 1.0.0
-Purchase: http://wrapbootstrap.com
--->
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<!--Head-->
 <head>
     <meta charset="utf-8" />
     <title>登录</title>
@@ -40,26 +35,9 @@ Purchase: http://wrapbootstrap.com
                         <div class="login-container animated fadeInDown">
                             <div class="loginbox bg-white">
                                 <div class="loginbox-title">登录</div>
-<!--                                <div class="loginbox-social">
-                                    <div class="social-title ">使用社交账户登录</div>
-                                    <div class="social-buttons">
-                                        <a href="#" class="button-facebook">
-                                            <i class="social-icon fa fa-facebook"></i>
-                                        </a>
-                                        <a href="#" class="button-twitter">
-                                            <i class="social-icon fa fa-twitter"></i>
-                                        </a>
-                                        <a href="#" class="button-google">
-                                            <i class="social-icon fa fa-google-plus"></i>
-                                        </a>
-                                    </div>
-                                </div>-->
-<!--                                <div class="loginbox-or">
-                                    <div class="or-line"></div>
-                                    <div class="or">或者</div>
-                                </div>-->
+
                                 <div class="loginbox-textbox">
-                                    <input type="text" class="form-control" name="email" placeholder="邮箱" value="root"/>
+                                    <input type="text" class="form-control" name="s_id" placeholder="学号" value="root"/>
                                 </div>
                                 <div class="loginbox-textbox">
                                     <input type="password" class="form-control" name="password" placeholder="密码" value="root"/>
@@ -70,12 +48,7 @@ Purchase: http://wrapbootstrap.com
                                 <div class="loginbox-submit">
                                     <input type="submit" class="btn btn-primary btn-block" name="submit" value="登录">
                                 </div>
-                                <div class="loginbox-signup">
-                                    <a href="register.html">邮箱注册</a>
-                                </div>
                             </div>
-<!--                            <div class="logobox">
-                            </div>-->
                         </div>
                     </form>
                     <script src="../assets/js/jquery-2.0.3.min.js"></script>

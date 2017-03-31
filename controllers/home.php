@@ -85,12 +85,6 @@ class home extends controller {
                 $i++;
             }
         }
-//        $num = array(rand(20, 70), rand(20, 70), rand(20, 70), rand(20, 70), rand(20, 70));
-//        $num2 = array(rand(20, 70), rand(20, 70), rand(20, 70), rand(20, 70), rand(20, 70));
-//        $num3 = array(rand(20, 70), rand(20, 70), rand(20, 70), rand(20, 70), rand(20, 70));
-//        $num4 = array(rand(20, 70), rand(20, 70), rand(20, 70), rand(20, 70), rand(20, 70));
-//        $num5 = array(rand(20, 70), rand(20, 70), rand(20, 70), rand(20, 70), rand(20, 70));
-//        $num6 = array(rand(20, 70), rand(20, 70), rand(20, 70), rand(20, 70), rand(20, 70));
         $data['total'] = $total;
         $data['num'] = $num[0];
         $data['num2'] = $num[1];

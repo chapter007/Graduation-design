@@ -142,7 +142,7 @@
                         <label class="col-lg-3 control-label">作业情况：</label>
 
                         <div class="col-lg-9">
-                          <select class="form-control">
+                          <select class="form-control" id="homework">
                             <option value="">
                               全部独立完成
                             </option>
@@ -162,7 +162,7 @@
                         <label class="col-lg-3 control-label">出勤情况：</label>
 
                         <div class="col-lg-9">
-                          <select class="form-control">
+                          <select class="form-control" id="attend">
                             <option value="">
                               从未缺课
                             </option>
@@ -186,7 +186,7 @@
                         <label class="col-lg-3 control-label">晚自习情况：</label>
 
                         <div class="col-lg-9">
-                          <input class="form-control" type="text" />
+                          <input class="form-control" type="text" id="nightlearning"/>
                         </div>
                       </div>
 
@@ -194,7 +194,7 @@
                         <label class="col-lg-3 control-label">玩网络游戏情况：</label>
 
                         <div class="col-lg-9">
-                          <select class="form-control">
+                          <select class="form-control" id="playgame">
                             <option value="">
                               从不
                             </option>
@@ -218,7 +218,7 @@
                         <label class="col-lg-3 control-label">图书借阅情况：</label>
 
                         <div class="col-lg-9">
-                          <input class="form-control" type="text" />
+                          <input class="form-control" type="text" id="librarylend"/>
                         </div>
                       </div>
 
@@ -226,7 +226,7 @@
                         <label class="col-lg-3 control-label">所选课程中感觉最难学的课程是：</label>
 
                         <div class="col-lg-9">
-                          <input class="form-control" type="text" />
+                          <input class="form-control" type="text" id="feelhard"/>
                         </div>
                       </div>
                     </div>
@@ -238,7 +238,7 @@
                         <label class="col-lg-3 control-label">目前学习总体感觉：</label>
 
                         <div class="col-lg-9">
-                          <select class="form-control">
+                          <select class="form-control" id="generalfeel">
                             <option value="">
                               没有任何问题
                             </option>
@@ -258,7 +258,7 @@
                         <label class="col-lg-3 control-label">考研计划：</label>
 
                         <div class="col-lg-9">
-                          <select class="form-control">
+                          <select class="form-control" id="graduateplan">
                             <option value="">
                               有
                             </option>
@@ -278,7 +278,7 @@
                         <label class="col-lg-3 control-label">勤工俭学：</label>
 
                         <div class="col-lg-9">
-                          <select class="form-control">
+                          <select class="form-control" id="worklearning">
                             <option value="">
                               有
                             </option>
@@ -294,7 +294,7 @@
                         <label class="col-lg-3 control-label">课外体育活动：</label>
 
                         <div class="col-lg-9">
-                          <select class="form-control">
+                          <select class="form-control" id="sports">
                             <option value="">
                               有
                             </option>
@@ -314,7 +314,7 @@
                         <label class="col-lg-3 control-label">参加社团活动：</label>
 
                         <div class="col-lg-9">
-                          <select class="form-control">
+                          <select class="form-control" id="attendactivity">
                             <option value="">
                               有
                             </option>

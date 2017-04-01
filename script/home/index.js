@@ -4,6 +4,7 @@ $(document).ready(function () {
         async: true
     });
     getData();
+	getOtherData();
 });
 
 function getQueryString(name) {
@@ -218,6 +219,37 @@ function getData() {
 				$("#class").val(student[4]);
 				$("#teacher").val(student[5]);
 				
+			}
+        },
+        error: function () {
+            alert('获取数据失败!');
+        }
+    });
+}
+
+function getOtherData() {
+    $.ajax({
+        type: "post",
+        url: "../../index.php?c=home&a=get_other_data",
+        dataType: "json",
+        data: {
+        },
+        async: true,
+        success: function (data) {
+            if(data.total==1){
+				var oinfo=data.student;
+				//alert(student[0]);
+				$("#homework option:selected").text(oinfo[1]);
+				$("#attend option:selected").text(oinfo[2]);
+				$("#nightlearning").val(oinfo[3]);
+				$("#librarylend").val(oinfo[4]);
+				$("#feelhard").val(oinfo[5]);
+				$("#generalfeel option:selected").text(oinfo[6]);
+				$("#graduateplan option:selected").text(oinfo[7]);
+				$("#worklearning option:selected").text(oinfo[8]);
+				$("#sports option:selected").text(oinfo[9]);
+				$("#attendactivity option:selected").text(oinfo[10]);
+				$("#playgame option:selected").text(oinfo[11]);
 			}
         },
         error: function () {

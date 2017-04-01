@@ -44,14 +44,14 @@
                         <li>
                             <a class="login-area dropdown-toggle" data-toggle="dropdown">
                                 <section>
-                                    <h2><span class="profile"><span>欢迎光临：admin</span></span></h2>
+                                    <h2><span class="profile"><span id="welcome">欢迎光临</span></span></h2>
                                 </section>
                             </a>
                             <!--Login Area Dropdown-->
 
                             <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
                                 <li class="username"><a>admin</a></li>
-                                <li class="email"><a>154340072@qq.com</a></li>
+                                <li class="email"><a></a></li>
 
                                 <!--Avatar Area-->
                                 <li class="edit">

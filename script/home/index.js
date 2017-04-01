@@ -26,7 +26,8 @@ function getData() {
 				$("#qq").val(student[3]);
 				$("#class").val(student[4]);
 				$("#teacher").val(student[5]);
-				
+				$("#welcome").text("欢迎光临："+student[1]);
+				$(".email").text(student[0]);
 			}
         },
         error: function () {

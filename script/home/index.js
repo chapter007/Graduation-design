@@ -3,11 +3,7 @@ $(document).ready(function () {
     $.ajaxSetup({
         async: true
     });
-    getPieData();
-    getAlertData();
-    //document.getElementById("yearpie1").style.display = "none";
-    setChartNum();
-    getLineData();
+    getData();
 });
 
 function getQueryString(name) {
@@ -84,23 +80,6 @@ function getPieData2(id1, id2, id3, n1, n2, n3) {
             setPie(id1, n1, alarmNum);
             setPie(id2, n2, alarmLevel);
             setPie(id3, n3, devYear);
-//            if (id1 != "devpie") {
-//                setPie(id1, '资产告警概况', alarmNum);
-//                setPie(id2, '资产采购概况', alarmLevel);
-//                setPie(id3, '预留', devYear);
-//            } else if (id2 != "levelpie") {
-//                setPie(id1, '资产告警概况', alarmNum);
-//                setPie(id2, '资产采购概况', alarmLevel);
-//                setPie(id3, '预留', devYear);
-//            } else if (id2 != "levelpie") {
-//                setPie(id1, '资产告警概况', alarmNum);
-//                setPie(id2, '资产采购概况', alarmLevel);
-//                setPie(id3, '预留', devYear);
-//            } else if (id2 != "levelpie") {
-//                setPie(id1, '资产告警概况', alarmNum);
-//                setPie(id2, '资产采购概况', alarmLevel);
-//                setPie(id3, '预留', devYear);
-//            }
         },
         error: function () {
             alert('获取数据失败!');
@@ -220,30 +199,26 @@ function setPie(elementId, elementText, elementData) {
     });
 }
 
-function getLineData() {
+function getData() {
     $.ajax({
         type: "post",
-        url: "../../index.php?c=home&a=getlines2",
+        url: "../../index.php?c=home&a=getdata",
         dataType: "json",
         data: {
         },
         async: true,
         success: function (data) {
-            var ctx = document.getElementById("canvas").getContext("2d");
-            var ctx1 = document.getElementById("canvas1").getContext("2d");
-            var ctx2 = document.getElementById("canvas2").getContext("2d");
-//            var ctx3 = document.getElementById("canvas3").getContext("2d");
-            var randomNum = eval(data.num);
-            var randomNum2 = eval(data.num2);
-            var randomNum3 = eval(data.num3);
-            var randomNum4 = eval(data.num4);
-            var randomNum5 = eval(data.num5);
-            var randomNum6 = eval(data.num6);
-            setLine(ctx, randomNum, randomNum2);
-            setLine(ctx1, randomNum3, randomNum4);
-            setLine(ctx2, randomNum5, randomNum6);
-//            setLine(ctx3,randomNum,randomNum2);
-//               setTimeout("getLineData()",50000);
+            if(data.total==1){
+				var student=data.student;
+				//alert(student[0]);
+				$("#s_id").val(student[0]);
+				$("#name").val(student[1]);
+				$("#mobile").val(student[2]);
+				$("#qq").val(student[3]);
+				$("#class").val(student[4]);
+				$("#teacher").val(student[5]);
+				
+			}
         },
         error: function () {
             alert('获取数据失败!');
@@ -282,8 +257,7 @@ function setLine(ctx, data, data2) {
     });
 }
 
-String.prototype.format = function ()
-{
+String.prototype.format = function (){
     if (arguments.length == 0)
         return this;
     for (var s = this, i = 0; i < arguments.length; i++)

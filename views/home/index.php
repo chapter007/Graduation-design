@@ -56,7 +56,7 @@
                         <label class="col-lg-3 control-label">姓名：</label>
 
                         <div class="col-lg-9">
-                          <input class="form-control" type="text" />
+                          <input class="form-control" type="text" id="name"/>
                         </div>
                       </div>
 
@@ -64,7 +64,7 @@
                         <label class="col-lg-3 control-label">学号：</label>
 
                         <div class="col-lg-9">
-                          <input class="form-control" type="text" />
+                          <input class="form-control" type="text" id="s_id"/>
                         </div>
                       </div>
                     </div>
@@ -76,7 +76,7 @@
                         <label class="col-lg-3 control-label">班级：</label>
 
                         <div class="col-lg-9">
-                          <input class="form-control" type="text" />
+                          <input class="form-control" type="text" id="class"/>
                         </div>
                       </div>
 
@@ -84,7 +84,7 @@
                         <label class="col-lg-3 control-label">手机：</label>
 
                         <div class="col-lg-9">
-                          <input class="form-control" type="text" />
+                          <input class="form-control" type="text" id="mobile"/>
                         </div>
                       </div>
                     </div>
@@ -96,7 +96,7 @@
                         <label class="col-lg-3 control-label">QQ：</label>
 
                         <div class="col-lg-9">
-                          <input class="form-control" type="text" />
+                          <input class="form-control" type="text" id="qq"/>
                         </div>
                       </div>
 
@@ -104,7 +104,7 @@
                         <label class="col-lg-3 control-label">辅导员：</label>
 
                         <div class="col-lg-9">
-                          <input class="form-control" type="text" />
+                          <input class="form-control" type="text" id="teacher"/>
                         </div>
                       </div>
                     </div>
@@ -446,16 +446,7 @@
 </script> <!--Beyond Scripts-->
    <script src="../../assets/js/beyond.min.js">
 </script> <!--Page Related Scripts-->
-   <script src="../../script/highcharts/highcharts.js" type="text/javascript">
-</script> <script src="../../script/highcharts/grid.js" type="text/javascript">
 </script> <script src="../../script/home/index.js">
-</script> <script src="../../assets/js/Chart.min.js">
-</script> <script src="../../assets/js/charts/sparkline/jquery.sparkline.js">
-</script> <script src="../../assets/js/charts/sparkline/sparkline-init.js">
-</script> <script>
-<![CDATA[
-            InitiateSparklineCharts.init();
-  ]]>
-  </script>
+</script>
 </body>
 </html>

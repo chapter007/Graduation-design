@@ -16,9 +16,6 @@
     <link id="bootstrap-rtl-link" href="" rel="stylesheet" />
     <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
 
-    <!--Fonts-->
-    <link href="http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300" rel="stylesheet" type="text/css">
-
     <!--Beyond styles-->
     <link id="beyond-link" href="../assets/cssed/beyond.min.css" rel="stylesheet" />
     <link href="assets/css/demo.min.css" rel="stylesheet" />

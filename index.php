@@ -1,10 +1,9 @@
 <?php
 @header('Content-type: text/html;charset=UTF-8');
 //得到的是文件所在层目录名
+session_start();
 define('PHPROOT_PATH',str_replace('\\', '/', dirname(__FILE__)));
-//if (!is_file(PHPROOT_PATH.'/register/key.reg')) {
-//	exit ('文件被损坏，请重新安装。');
-//}else if(is_file(PHPROOT_PATH.'/register/key.key')){
+error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE );
 	$config = array(
 		'url_model'=>'1',
 		'control' =>'home',

@@ -60,7 +60,7 @@
                                 </li>
                                 <!--/Theme Selector Area-->
                                 <li class="dropdown-footer">
-                                    <a href="login.html">
+                                    <a href="../../index.php">
                                         注销
                                     </a>
                                 </li>

@@ -56,7 +56,7 @@
                         <label class="col-lg-3 control-label">姓名：</label>
 
                         <div class="col-lg-9">
-                          <input class="form-control" type="text" id="name"/>
+                          <input class="form-control" type="text" id="name" />
                         </div>
                       </div>
 
@@ -64,7 +64,7 @@
                         <label class="col-lg-3 control-label">学号：</label>
 
                         <div class="col-lg-9">
-                          <input class="form-control" type="text" id="s_id"/>
+                          <input class="form-control" type="text" id="s_id" />
                         </div>
                       </div>
                     </div>
@@ -76,7 +76,7 @@
                         <label class="col-lg-3 control-label">班级：</label>
 
                         <div class="col-lg-9">
-                          <input class="form-control" type="text" id="class"/>
+                          <input class="form-control" type="text" id="class" />
                         </div>
                       </div>
 
@@ -84,7 +84,7 @@
                         <label class="col-lg-3 control-label">手机：</label>
 
                         <div class="col-lg-9">
-                          <input class="form-control" type="text" id="mobile"/>
+                          <input class="form-control" type="text" id="mobile" />
                         </div>
                       </div>
                     </div>
@@ -96,7 +96,7 @@
                         <label class="col-lg-3 control-label">QQ：</label>
 
                         <div class="col-lg-9">
-                          <input class="form-control" type="text" id="qq"/>
+                          <input class="form-control" type="text" id="qq" />
                         </div>
                       </div>
 
@@ -104,7 +104,7 @@
                         <label class="col-lg-3 control-label">辅导员：</label>
 
                         <div class="col-lg-9">
-                          <input class="form-control" type="text" id="teacher"/>
+                          <input class="form-control" type="text" id="teacher" />
                         </div>
                       </div>
                     </div>
@@ -186,7 +186,7 @@
                         <label class="col-lg-3 control-label">晚自习情况：</label>
 
                         <div class="col-lg-9">
-                          <input class="form-control" type="text" id="nightlearning"/>
+                          <input class="form-control" type="text" id="nightlearning" />
                         </div>
                       </div>
 
@@ -218,7 +218,7 @@
                         <label class="col-lg-3 control-label">图书借阅情况：</label>
 
                         <div class="col-lg-9">
-                          <input class="form-control" type="text" id="librarylend"/>
+                          <input class="form-control" type="text" id="librarylend" />
                         </div>
                       </div>
 
@@ -226,7 +226,7 @@
                         <label class="col-lg-3 control-label">所选课程中感觉最难学的课程是：</label>
 
                         <div class="col-lg-9">
-                          <input class="form-control" type="text" id="feelhard"/>
+                          <input class="form-control" type="text" id="feelhard" />
                         </div>
                       </div>
                     </div>
@@ -446,7 +446,7 @@
 </script> <!--Beyond Scripts-->
    <script src="../../assets/js/beyond.min.js">
 </script> <!--Page Related Scripts-->
-</script> <script src="../../script/home/index.js">
+   <script src="../../script/home/index.js">
 </script>
 </body>
 </html>

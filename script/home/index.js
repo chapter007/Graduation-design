@@ -5,6 +5,7 @@ $(document).ready(function () {
     });
     getData();
 	getOtherData();
+	
 });
 
 function getData() {
@@ -57,6 +58,7 @@ function getOtherData() {
 				$("#attendactivity option:selected").text(oinfo[10]);
 				$("#playgame option:selected").text(oinfo[11]);
 			}
+			$(".loading-container").addClass("loading-inactive");
         },
         error: function () {
             alert('获取数据失败!');

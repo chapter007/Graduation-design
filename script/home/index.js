@@ -67,6 +67,78 @@ function getOtherData() {
     });
 }
 
+function update_info(){
+	var id=$("#s_id").val();
+	var name=$("#name").val();
+	var mobile=$("#mobile").val();
+	var qq=$("#qq").val();
+	var myclass=$("#class").val();
+	var teacher=$("#teacher").val();
+	$.ajax({
+        type: "post",
+        url: "../../index.php?c=home&a=up_data",
+        dataType: "json",
+        data: {
+			id:id,
+			name:name,
+			mobile:mobile,
+			qq:qq,
+			myclass:myclass,
+			teacher:teacher
+        },
+        async: true,
+        success: function (data) {
+            if(data.result==1){
+				alert("更新数据成功");
+			}
+        },
+        error: function () {
+            alert('获取数据失败!');
+        }
+    });
+}
+
+function update_other_info(){
+	var homework=$.trim($("#homework option:selected").text());
+	var attend=$.trim($("#attend option:selected").text());
+	var nightlearning=$("#nightlearning").val();
+	var librarylend=$("#librarylend").val();
+	var feelhard=$("#feelhard").val();
+	var generalfeel=$.trim($("#generalfeel option:selected").text());
+	var graduateplan=$.trim($("#graduateplan option:selected").text());
+	var worklearning=$.trim($("#worklearning option:selected").text());
+	var sports=$.trim($("#sports option:selected").text());
+	var attendactivity=$.trim($("#attendactivity option:selected").text());
+	var playgame=$.trim($("#playgame option:selected").text());
+	$.ajax({
+        type: "post",
+        url: "../../index.php?c=home&a=up_other_data",
+        dataType: "json",
+        data: {
+			homework:homework,
+			attend:attend,
+			nightlearning:nightlearning,
+			librarylend:librarylend,
+			feelhard:feelhard,
+			generalfeel:generalfeel,
+			graduateplan:graduateplan,
+			worklearning:worklearning,
+			sports:sports,
+			attendactivity:attendactivity,
+			playgame:playgame
+        },
+        async: true,
+        success: function (data) {
+            if(data.result==1){
+				alert("更新数据成功");
+			}
+        },
+        error: function () {
+            alert('获取数据失败!');
+        }
+    });
+}
+
 function getQueryString(name) {
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
     var r = window.location.search.substr(1).match(reg);

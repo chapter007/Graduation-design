@@ -78,5 +78,55 @@ class home extends controller {
         
         echo json_encode($data);
     }
+	
+	public function up_data() {
+        if (!isset($_SESSION['s_id'])) {
+            Header("Location: ./views/login.php", TRUE, 302);
+        } 
+		$id=$_POST['id'];
+		$name=$_POST['name'];
+		$mobile=$_POST['mobile'];
+		$qq=$_POST['qq'];
+		$myclass=$_POST['myclass'];
+		$teacher=$_POST['teacher'];
+        $sql = "update s_info set mobile=$mobile,qq=$qq,class='$myclass',teacher='$teacher' where id=$id";
+		//echo $sql;
+        $result = mysql_query($sql);
+        if ($result) {
+			$data['result'] = 1;
+		}else{
+			$data['result'] = 0;
+		}
+        
+        echo json_encode($data);
+    }
+	
+	public function up_other_data() {
+        if (!isset($_SESSION['s_id'])) {
+            Header("Location: ./views/login.php", TRUE, 302);
+        } 
+		$id=$_SESSION['s_id'];
+		$homework=$_POST['homework'];
+		$attend=$_POST['attend'];
+		$nightlearning=$_POST['nightlearning'];
+		$librarylend=$_POST['librarylend'];
+		$feelhard=$_POST['feelhard'];
+		$generalfeel=$_POST['generalfeel'];
+		$graduateplan=$_POST['graduateplan'];
+		$worklearning=$_POST['worklearning'];
+		$sports=$_POST['sports'];
+		$attendactivity=$_POST['attendactivity'];
+		$playgame=$_POST['playgame'];
+        $sql = "update s_other set homework='$homework',attend='$attend',nightlearning='$nightlearning',librarylend='$librarylend',feelhard='$feelhard',generalfeel='$generalfeel',graduateplan='$graduateplan',worklearning='$worklearning',sports='$sports',attendactivity='$attendactivity',playgame='$playgame' where id=$id";
+		//echo $sql;
+        $result = mysql_query($sql);
+        if ($result) {
+			$data['result'] = 1;
+		}else{
+			$data['result'] = 0;
+		}
+        
+        echo json_encode($data);
+    }
 
 }

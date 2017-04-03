@@ -36,23 +36,25 @@ class home extends controller {
     public function getdata() {
         if (!isset($_SESSION['s_id'])) {
             Header("Location: ./views/login.php", TRUE, 302);
-        } 
-		$s_id=$_SESSION['s_id'];
-        $sql = "select * from s_info where id=$s_id";
-		//echo $sql;
-        $result = mysql_query($sql);
-        $num = array();
-        $i=0;
-        if ($result) {
-            while ($value = mysql_fetch_array($result)) {
-                $num[$i] = array($value["id"],$value["name"],$value["mobile"],$value["qq"],$value["class"],$value["teacher"]);
-                $i++;
-            }
-        }
-        $data['total'] = 1;
-        $data['student'] = $num[0];
-        
-        echo json_encode($data);
+        }else{
+			$s_id=$_SESSION['s_id'];
+			$sql = "select * from s_info where id=$s_id";
+			//echo $sql;
+			$result = mysql_query($sql);
+			$num = array();
+			$i=0;
+			if ($result) {
+				while ($value = mysql_fetch_array($result)) {
+					$num[$i] = array($value["id"],$value["name"],$value["mobile"],$value["qq"],$value["class"],$value["teacher"]);
+					$i++;
+				}
+			}
+			$data['total'] = 1;
+			$data['student'] = $num[0];
+			
+			echo json_encode($data);
+		}
+		
     }
 
 	public function get_other_data() {

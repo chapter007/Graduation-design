@@ -1,5 +1,6 @@
 <?php
 	include 'conn.php';
+	session_start();
     $user=  htmlspecialchars($_POST["s_id"]);
     $password=  htmlspecialchars($_POST["password"]);
 	//从数据库里查询用户是否存在

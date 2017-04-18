@@ -56,6 +56,28 @@ class home extends controller {
 		}
 		
     }
+	
+	public function get_single_data() {
+       
+			$s_id=$_POST['id'];
+			$sql = "select * from s_info where id=$s_id";
+			//echo $sql;
+			$result = mysql_query($sql);
+			$num = array();
+			$i=0;
+			if ($result) {
+				while ($value = mysql_fetch_array($result)) {
+					$num[$i] = array($value["id"],$value["name"],$value["mobile"],$value["qq"],$value["class"],$value["teacher"]);
+					$i++;
+				}
+			}
+			$data['total'] = 1;
+			$data['student'] = $num[0];
+			
+			echo json_encode($data);
+		
+		
+    }
 
 	public function get_other_data() {
         if (!isset($_SESSION['s_id'])) {
@@ -131,4 +153,25 @@ class home extends controller {
         echo json_encode($data);
     }
 
+	public function get_student_data() {
+        
+			$sql = "select * from s_info";
+			//echo $sql;
+			$result = mysql_query($sql);
+			$num = array();
+			$i=0;
+			if ($result) {
+				while ($value = mysql_fetch_array($result)) {
+					$num[$i] = array($value["id"],$value["name"],$value["mobile"],$value["qq"],$value["class"],$value["teacher"]);
+					$i++;
+				}
+			}
+			$data['total'] = $i;
+			for($j=0;$j<$i;$j++){
+				$data['s'.$j] = $num[$j];
+			}
+			echo json_encode($data);
+		
+		
+    }
 }

@@ -30,21 +30,25 @@
                 <body>       
                     <form id="form1" action="../controllers/yz.php" method="post">
                         <div class="login-container animated fadeInDown">
-                            <div class="loginbox bg-white">
+                            <div class="loginbox bg-white" style="width:80%!important;margin-left:10%">
                                 <div class="loginbox-title">登录</div>
-
-                                <div class="loginbox-textbox" style="height: initial;">
+								<div style="width:80%;margin-left:10%">
+									<div class="loginbox-textbox" style="height: initial;">
                                     <input type="text" class="form-control" style="max-width: none;" name="s_id" placeholder="学号" value="root"/>
                                 </div>
                                 <div class="loginbox-textbox" style="height: initial;">
                                     <input type="password" class="form-control" style="max-width: none;" name="password" placeholder="密码" value="root"/>
                                 </div>
-                                <div class="loginbox-forgot">
-                                    <a href="">忘记密码?</a>
+								<div class="loginbox-forgot" style="height:10%">
+                                    <a href="javascript:alert('默认密码是学号')">忘记密码?</a>
                                 </div>
                                 <div class="loginbox-submit" style="margin-top:10%">
-                                    <input type="submit" class="btn btn-primary btn-block" name="submit" value="登录">
+                                    <input type="submit" class="btn btn-primary btn-block" style="width:30%" name="submit" value="登录">
+									<input type="submit" class="btn btn-primary btn-block" style="width:45%;margin-top: 0px;" name="submit" value="教师登录">
                                 </div>
+								</div>
+                                
+                                
                             </div>
                         </div>
                     </form>

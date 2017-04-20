@@ -72,6 +72,7 @@ function getStudentData() {
 					var origin=$("#student_table").html()+html;
 					$("#student_table").html(origin);
 				}
+				setPagination(data.total);
 				$(".loading-container").addClass("loading-inactive");
 			}
         },
@@ -198,6 +199,14 @@ function getQueryString(name) {
     return null;
 }
 
+function setPagination(totalData){
+	var page=totalData/20;
+	if(page<=1){
+		//一页可以显示完
+		var paginationCode="<ul class='pagination pagination-lg'><li class='disabled'><a href='#'>«</a></li><li class='active'><a href='#'>1 <span class='sr-only'>(current)</span></a></li><li><a href='#'>»</a></li></ul>"
+		$("#pagination").html(paginationCode);
+	}
+}
 
 String.prototype.format = function (){
     if (arguments.length == 0)

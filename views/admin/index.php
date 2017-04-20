@@ -74,7 +74,9 @@
                                         
                                     </tbody>
                                 </table>
-
+								<div style="margin-top:5%" id="pagination">
+                                    
+                                </div>
                                 <div class="footer">
                                     <code>学生信息表，点击可以查看更多信息</code>
                                 </div>

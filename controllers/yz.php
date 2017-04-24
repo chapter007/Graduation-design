@@ -9,25 +9,23 @@
 	$_SESSION['s_id']=$user;
 	if($submit=='教师登录'){
 		$sql="select * from t_info where id= $user and password='$password'";
-	}else{
-		$sql="select * from s_info where id= $user and password='$password'";
-	}
-	//echo $sql;break;
-	$result=mysql_query($sql);
-	
-	if($result){
-		if($submit=='教师登录'){
+		$result=mysql_query($sql);
+		$tmp=mysql_num_rows($result);
+		if($tmp==1){
 			echo "<script> window.location.href='../views/admin/index.php';</script>";
 		}else{
-			echo "<script> window.location.href='../views/student/index.php';</script>";
+			echo "<script>alert('login wrong');window.location.href='../index.php'</script>";
 		}
-		
-	}  else {
-        echo "<script>"
-        . "alert('login wrong');"
-                . "window.location.href='../index.php';"
-        . "</script>";
-    }
+	}else{
+		$sql="select * from s_info where id= $user and password='$password'";
+		$result=mysql_query($sql);
+		$tmp=mysql_num_rows($result);
+		if($tmp==1){
+			echo "<script> window.location.href='../views/student/index.php';</script>";
+		}else{
+			echo "<script>alert('login wrong');window.location.href='../index.php'</script>";
+		}
+	}
     
 
 

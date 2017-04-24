@@ -20,6 +20,7 @@ function getData() {
 				$("#teacher").val(student[5]);
 				$("#welcome").text("欢迎光临："+student[1]);
 				$(".email").text(student[0]);
+				$(".loading-container").addClass("loading-inactive");
 			}
         },
         error: function () {
@@ -74,6 +75,25 @@ function getStudentData() {
 				}
 				setPagination(data.total);
 				$(".loading-container").addClass("loading-inactive");
+			}
+        },
+        error: function () {
+            alert('获取数据失败!');
+        }
+    });
+}
+
+function getPageData() {
+    $.ajax({
+        type: "post",
+        url: "../../index.php?c=home&a=get_page_data",
+        dataType: "json",
+        data: {
+        },
+        async: true,
+        success: function (data) {
+            if(data.total>0){
+				setPagination(data.total);
 			}
         },
         error: function () {
@@ -201,10 +221,20 @@ function getQueryString(name) {
 
 function setPagination(totalData){
 	var page=totalData/20;
-	if(page<=1){
-		//一页可以显示完
-		var paginationCode="<ul class='pagination pagination-lg'><li class='disabled'><a href='#'>«</a></li><li class='active'><a href='#'>1 <span class='sr-only'>(current)</span></a></li><li><a href='#'>»</a></li></ul>"
-		$("#pagination").html(paginationCode);
+	var paginationCode="<ul class='pagination pagination-lg'><li class='disabled'><a href='#'>«</a></li><li class='active'><a href='#' style='z-index:0'>1 <span class='sr-only'>(current)</span></a></li>"+makeElementCode(page)+"<li><a href='#'>»</a></li></ul>";
+	
+	$("#pagination").html(paginationCode);
+}
+
+function makeElementCode(page){
+	if(page>1){
+		var elementCode="<li><a href='#'>2</a></li>";
+		for(var i=3;i<=page;i++){
+			elementCode+="<li><a href='#'>"+i+"</a></li>";
+		}
+		return elementCode;
+	}else{
+		return "";
 	}
 }
 

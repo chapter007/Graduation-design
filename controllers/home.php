@@ -32,7 +32,35 @@ class home extends controller {
         $data["total"] = 20;
         $this->loadview('home/index', $data);
     }
-
+	
+	public function check_account() {
+		$id=$_POST['id'];
+		$password=$_POST['password'];
+		$is_teacher=$_POST['teacher'];
+		
+		if($is_teacher==1){//是老师登陆
+			$sql="select * from t_info where id= $id and password='$password'";
+			$result=mysql_query($sql);
+			$tmp=mysql_num_rows($result);
+			if($tmp==1){
+				$data['result'] = 1;
+			}else{
+				$data['total'] = 0;
+			}
+			echo json_encode($data);
+		}else{//学生登陆
+			$sql="select * from s_info where id= $id and password='$password'";
+			$result=mysql_query($sql);
+			$tmp=mysql_num_rows($result);
+			if($tmp==1){
+				$data['result'] = 1;
+			}else{
+				$data['total'] = 0;
+			}
+			echo json_encode($data);
+		}
+    }
+	
     public function getdata() {
         if (!isset($_SESSION['s_id'])) {
             Header("Location: ./views/login.php", TRUE, 302);
@@ -141,10 +169,21 @@ class home extends controller {
 		$sports=$_POST['sports'];
 		$attendactivity=$_POST['attendactivity'];
 		$playgame=$_POST['playgame'];
-        $sql = "update s_other set homework='$homework',attend='$attend',nightlearning='$nightlearning',librarylend='$librarylend',feelhard='$feelhard',generalfeel='$generalfeel',graduateplan='$graduateplan',worklearning='$worklearning',sports='$sports',attendactivity='$attendactivity',playgame='$playgame' where id=$id";
-		//echo $sql;
-        $result = mysql_query($sql);
-        if ($result) {
+        
+		//判断是否存在，若不存在则改为插入
+		$sql_check="select * from s_other where id=$id";
+		$result = mysql_query($sql_check);
+        $tmp=mysql_num_rows($result);
+		if($tmp==1){
+			$sql = "update s_other set homework='$homework',attend='$attend',nightlearning='$nightlearning',librarylend='$librarylend',feelhard='$feelhard',generalfeel='$generalfeel',graduateplan='$graduateplan',worklearning='$worklearning',sports='$sports',attendactivity='$attendactivity',playgame='$playgame' where id=$id";
+		}else if($tmp==0){
+			$sql = "insert into s_other values ($id,'$homework','$attend','$nightlearning','$librarylend','$feelhard','$generalfeel','$graduateplan','$worklearning','$sports','$attendactivity','$playgame')";
+		}
+		
+		//开始执行插入or更新命令
+		$result = mysql_query($sql);
+        
+		if ($result) {
 			$data['result'] = 1;
 		}else{
 			$data['result'] = 0;
@@ -155,7 +194,7 @@ class home extends controller {
 
 	public function get_student_data() {
         
-			$sql = "select * from s_info";
+			$sql = "select * from s_info limit 20";
 			//echo $sql;
 			$result = mysql_query($sql);
 			$num = array();
@@ -171,7 +210,20 @@ class home extends controller {
 				$data['s'.$j] = $num[$j];
 			}
 			echo json_encode($data);
-		
-		
+    }
+	
+	public function get_page_data() {
+        
+			$sql = "select count(*) as total from s_info";
+			//echo $sql;
+			$result = mysql_query($sql);
+			$num = array();
+			$i=0;
+			if ($result) {
+				while ($value = mysql_fetch_array($result)) {
+					$data['total'] = $value["total"];
+				}
+			}
+			echo json_encode($data);
     }
 }

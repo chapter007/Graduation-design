@@ -1,11 +1,11 @@
 <?php
 /**
- * ·ÖÒ³Àà
+ * åˆ†é¡µç±»
  * 
- * µ÷ÓÃ·½Ê½£º
- * $p=new Page(×ÜÒ³Êı,ÏÔÊ¾Ò³Êı,µ±Ç°Ò³Âë,Ã¿Ò³ÏÔÊ¾ÌõÊı,[Á´½Ó]);
- * print_r($p->getPages()); //Éú³ÉÒ»¸öÒ³ÂëÊı×é£¨¼üÎªÒ³Âë£¬ÖµÎªÁ´½Ó£©
- * echo $p->showPages(1);    //Éú³ÉÒ»¸öÒ³ÂëÑùÊ½£¨¿ÉÌí¼Ó×Ô¶¨ÒåÑùÊ½£©
+ * è°ƒç”¨æ–¹å¼ï¼š
+ * $p=new Page(æ€»é¡µæ•°,æ˜¾ç¤ºé¡µæ•°,å½“å‰é¡µç ,æ¯é¡µæ˜¾ç¤ºæ¡æ•°,[é“¾æ¥]);
+ * print_r($p->getPages()); //ç”Ÿæˆä¸€ä¸ªé¡µç æ•°ç»„ï¼ˆé”®ä¸ºé¡µç ï¼Œå€¼ä¸ºé“¾æ¥ï¼‰
+ * echo $p->showPages(1);    //ç”Ÿæˆä¸€ä¸ªé¡µç æ ·å¼ï¼ˆå¯æ·»åŠ è‡ªå®šä¹‰æ ·å¼ï¼‰
  * 
  * @author: Dzer <Email:358654744@qq.com Blog:Dzer.me>
  * @version: 2014-12-25 09:09:42
@@ -13,28 +13,28 @@
  */
  
 /*
-Ë¼Â·£º
-¸øÎÒÒ»¸ö ×ÜÒ³Êı£¬ĞèÒªÏÔÊ¾µÄÒ³Êı£¬µ±Ç°Ò³£¬Ã¿Ò³ÏÔÊ¾µÄÌõÊı£¬Á¬½Ó
-Ğ´Ò»¸ö·½·¨ Éú³ÉÒ»¸öÒ»Î¬Êı×é£¬¼üÎªÒ³Âë ÖµÎªÁ¬½Ó
-Ğ´Ò»¸ö·½·¨ ·µ»ØÒ»¸öÉú³ÉºÃÑùÊ½µÄÒ³Âë£¨²¢ÇÒ¿ÉÒÔ¸ù¾İ×Ô¼ºĞèÒªÌí¼ÓÑùÊ½£©
-Ä¬ÈÏÑùÊ½ ¹²45Ìõ¼ÇÂ¼,Ã¿Ò³ÏÔÊ¾10Ìõ,µ±Ç°µÚ1/4Ò³ [Ê×Ò³] [ÉÏÒ³] [1] [2] [3] .. [ÏÂÒ³] [Î²Ò³]
+æ€è·¯ï¼š
+ç»™æˆ‘ä¸€ä¸ª æ€»é¡µæ•°ï¼Œéœ€è¦æ˜¾ç¤ºçš„é¡µæ•°ï¼Œå½“å‰é¡µï¼Œæ¯é¡µæ˜¾ç¤ºçš„æ¡æ•°ï¼Œè¿æ¥
+å†™ä¸€ä¸ªæ–¹æ³• ç”Ÿæˆä¸€ä¸ªä¸€ç»´æ•°ç»„ï¼Œé”®ä¸ºé¡µç  å€¼ä¸ºè¿æ¥
+å†™ä¸€ä¸ªæ–¹æ³• è¿”å›ä¸€ä¸ªç”Ÿæˆå¥½æ ·å¼çš„é¡µç ï¼ˆå¹¶ä¸”å¯ä»¥æ ¹æ®è‡ªå·±éœ€è¦æ·»åŠ æ ·å¼ï¼‰
+é»˜è®¤æ ·å¼ å…±45æ¡è®°å½•,æ¯é¡µæ˜¾ç¤º10æ¡,å½“å‰ç¬¬1/4é¡µ [é¦–é¡µ] [ä¸Šé¡µ] [1] [2] [3] .. [ä¸‹é¡µ] [å°¾é¡µ]
 */
 class Page{
-    protected $count;       //×ÜÌõÊı
-    protected $showPages;   //ĞèÒªÏÔÊ¾µÄÒ³Êı
-    protected $countPages;  //×ÜÒ³Êı
-    protected $currPage;    //µ±Ç°Ò³
-    protected $subPages;    //Ã¿Ò³ÏÔÊ¾ÌõÊı
-    protected $href;        //Á¬½Ó
-    protected $page_arr=array();    //±£´æÉú³ÉµÄÒ³Âë ¼üÒ³Âë ÖµÎªÁ¬½Ó
+    protected $count;       //æ€»æ¡æ•°
+    protected $showPages;   //éœ€è¦æ˜¾ç¤ºçš„é¡µæ•°
+    protected $countPages;  //æ€»é¡µæ•°
+    protected $currPage;    //å½“å‰é¡µ
+    protected $subPages;    //æ¯é¡µæ˜¾ç¤ºæ¡æ•°
+    protected $href;        //è¿æ¥
+    protected $page_arr=array();    //ä¿å­˜ç”Ÿæˆçš„é¡µç  é”®é¡µç  å€¼ä¸ºè¿æ¥
  
     /**
-     * __construct  ¹¹Ôìº¯Êı£¨»ñÈ¡·ÖÒ³ËùĞè²ÎÊı£©
-     * @param int $count     ×ÜÌõÊı
-     * @param int $showPages ÏÔÊ¾Ò³Êı
-     * @param int $currPage  µ±Ç°Ò³Êı
-     * @param int $subPages  Ã¿Ò³ÏÔÊ¾ÊıÁ¿
-     * @param string $href   Á¬½Ó£¨²»ÉèÖÃÔò»ñÈ¡µ±Ç°URL£©
+     * __construct  æ„é€ å‡½æ•°ï¼ˆè·å–åˆ†é¡µæ‰€éœ€å‚æ•°ï¼‰
+     * @param int $count     æ€»æ¡æ•°
+     * @param int $showPages æ˜¾ç¤ºé¡µæ•°
+     * @param int $currPage  å½“å‰é¡µæ•°
+     * @param int $subPages  æ¯é¡µæ˜¾ç¤ºæ•°é‡
+     * @param string $href   è¿æ¥ï¼ˆä¸è®¾ç½®åˆ™è·å–å½“å‰URLï¼‰
      */
     public function __construct($count,$showPages,$currPage,$subPages,$href=''){
         $this->count=$count;
@@ -42,7 +42,7 @@ class Page{
         $this->currPage=$currPage;
         $this->subPages=$subPages;
          
-        //Èç¹ûÁ´½ÓÃ»ÓĞÉèÖÃÔò»ñÈ¡µ±Ç°Á¬½Ó
+        //å¦‚æœé“¾æ¥æ²¡æœ‰è®¾ç½®åˆ™è·å–å½“å‰è¿æ¥
         if(empty($href)){
             $this->href=htmlentities($_SERVER['PHP_SELF']); 
         }else{
@@ -52,17 +52,17 @@ class Page{
     }
  
     /**
-     * getPages ·µ»ØÒ³ÂëÊı×é
-     * @return array Ò»Î¬Êı×é ¼üÎªÒ³Âë ÖµÎªÁ´½Ó
+     * getPages è¿”å›é¡µç æ•°ç»„
+     * @return array ä¸€ç»´æ•°ç»„ é”®ä¸ºé¡µç  å€¼ä¸ºé“¾æ¥
      */
     public function getPages(){
         return $this->page_arr;
     }
  
     /**
-     * showPages ·µ»ØÉú³ÉºÃµÄÒ³Âë
-     * @param  int $style ÑùÊ½
-     * @return string     Éú³ÉºÃµÄÒ³Âë
+     * showPages è¿”å›ç”Ÿæˆå¥½çš„é¡µç 
+     * @param  int $style æ ·å¼
+     * @return string     ç”Ÿæˆå¥½çš„é¡µç 
      */
     public function showPages($style=1){
         $func='pageStyle'.$style;
@@ -70,23 +70,23 @@ class Page{
     }
  
     /**
-     * pageStyle1 ·ÖÒ³ÑùÊ½£¨¿É²ÎÕÕÕâ¸öÌí¼Ó×Ô¶¨ÒåÑùÊ½ ÀıÈçpageStyle2£¨£©£©
-     * ÑùÊ½ ¹²45Ìõ¼ÇÂ¼,Ã¿Ò³ÏÔÊ¾10Ìõ,µ±Ç°µÚ1/4Ò³ [Ê×Ò³] [ÉÏÒ³] [1] [2] [3] .. [ÏÂÒ³] [Î²Ò³] 
+     * pageStyle1 åˆ†é¡µæ ·å¼ï¼ˆå¯å‚ç…§è¿™ä¸ªæ·»åŠ è‡ªå®šä¹‰æ ·å¼ ä¾‹å¦‚pageStyle2ï¼ˆï¼‰ï¼‰
+     * æ ·å¼ å…±45æ¡è®°å½•,æ¯é¡µæ˜¾ç¤º10æ¡,å½“å‰ç¬¬1/4é¡µ [é¦–é¡µ] [ä¸Šé¡µ] [1] [2] [3] .. [ä¸‹é¡µ] [å°¾é¡µ] 
      * @return string 
      */
     protected function pageStyle1(){
-        /* ¹¹ÔìÆÕÍ¨Ä£Ê½µÄ·ÖÒ³ 
-        ¹²4523Ìõ¼ÇÂ¼,Ã¿Ò³ÏÔÊ¾10Ìõ,µ±Ç°µÚ1/453Ò³ [Ê×Ò³] [ÉÏÒ³] [1] [2] [3] .. [ÏÂÒ³] [Î²Ò³] 
+        /* æ„é€ æ™®é€šæ¨¡å¼çš„åˆ†é¡µ 
+        å…±4523æ¡è®°å½•,æ¯é¡µæ˜¾ç¤º10æ¡,å½“å‰ç¬¬1/453é¡µ [é¦–é¡µ] [ä¸Šé¡µ] [1] [2] [3] .. [ä¸‹é¡µ] [å°¾é¡µ] 
         */
-        $pageStr='¹²'.$this->count.'Ìõ¼ÇÂ¼£¬Ã¿Ò³ÏÔÊ¾'.$this->subPages.'Ìõ';
-        $pageStr.='µ±Ç°µÚ'.$this->currPage.'/'.$this->countPages.'Ò³ ';
+        $pageStr='å…±'.$this->count.'æ¡è®°å½•ï¼Œæ¯é¡µæ˜¾ç¤º'.$this->subPages.'æ¡';
+        $pageStr.='å½“å‰ç¬¬'.$this->currPage.'/'.$this->countPages.'é¡µ ';
  
         $_GET['page'] = 1;
-        $pageStr.='<span>[<a href="'.$this->href.'?'.http_build_query($_GET).'">Ê×Ò³</a>] </span>';
-        //Èç¹ûµ±Ç°Ò³²»ÊÇµÚÒ»Ò³¾ÍÏÔÊ¾ÉÏÒ³
+        $pageStr.='<span>[<a href="'.$this->href.'?'.http_build_query($_GET).'">é¦–é¡µ</a>] </span>';
+        //å¦‚æœå½“å‰é¡µä¸æ˜¯ç¬¬ä¸€é¡µå°±æ˜¾ç¤ºä¸Šé¡µ
         if($this->currPage>1){
             $_GET['page'] = $this->currPage-1;
-            $pageStr.='<span>[<a href="'.$this->href.'?'.http_build_query($_GET).'">ÉÏÒ³</a>] </span>';
+            $pageStr.='<span>[<a href="'.$this->href.'?'.http_build_query($_GET).'">ä¸Šé¡µ</a>] </span>';
         }
  
         foreach ($this->page_arr as $k => $v) {
@@ -94,21 +94,21 @@ class Page{
             $pageStr.='<span>[<a href="'.$v.'">'.$k.'</a>] </span>';
         }
  
-        //Èç¹ûµ±Ç°Ò³Ğ¡ÓÚ×ÜÒ³Êı¾ÍÏÔÊ¾ÏÂÒ»Ò³
+        //å¦‚æœå½“å‰é¡µå°äºæ€»é¡µæ•°å°±æ˜¾ç¤ºä¸‹ä¸€é¡µ
         if($this->currPage<$this->countPages){
             $_GET['page'] = $this->currPage+1;
-            $pageStr.='<span>[<a href="'.$this->href.'?'.http_build_query($_GET).'">ÏÂÒ³</a>] </span>';
+            $pageStr.='<span>[<a href="'.$this->href.'?'.http_build_query($_GET).'">ä¸‹é¡µ</a>] </span>';
         }
  
         $_GET['page'] = $this->countPages;
-        $pageStr.='<span>[<a href="'.$this->href.'?'.http_build_query($_GET).'">Î²Ò³</a>] </span>';
+        $pageStr.='<span>[<a href="'.$this->href.'?'.http_build_query($_GET).'">å°¾é¡µ</a>] </span>';
  
         return $pageStr;
     }
  
     /**
-     * construct_Pages Éú³ÉÒ³ÂëÊı×é
-     * ¼üÎªÒ³Âë£¬ÖµÎªÁ´½Ó
+     * construct_Pages ç”Ÿæˆé¡µç æ•°ç»„
+     * é”®ä¸ºé¡µç ï¼Œå€¼ä¸ºé“¾æ¥
      * $this->page_arr=Array(
      *                  [1] => index.php?page=1
      *                  [2] => index.php?page=2
@@ -116,18 +116,18 @@ class Page{
      *                  ......)
      */
     protected function construct_Pages(){
-        //¼ÆËã×ÜÒ³Êı
+        //è®¡ç®—æ€»é¡µæ•°
         $this->countPages=ceil($this->count/$this->subPages);
-        //¸ù¾İµ±Ç°Ò³¼ÆËãÇ°ºóÒ³Êı
+        //æ ¹æ®å½“å‰é¡µè®¡ç®—å‰åé¡µæ•°
         $leftPage_num=floor($this->showPages/2);
         $rightPage_num=$this->showPages-$leftPage_num;
  
-        //×ó±ßÏÔÊ¾ÊıÎªµ±Ç°Ò³¼õ×ó±ß¸ÃÏÔÊ¾µÄÊı ÀıÈç×ÜÏÔÊ¾7Ò³ µ±Ç°Ò³ÊÇ5  ×ó±ß×îĞ¡Îª5-3  ÓÒ±ßÎª5+3
+        //å·¦è¾¹æ˜¾ç¤ºæ•°ä¸ºå½“å‰é¡µå‡å·¦è¾¹è¯¥æ˜¾ç¤ºçš„æ•° ä¾‹å¦‚æ€»æ˜¾ç¤º7é¡µ å½“å‰é¡µæ˜¯5  å·¦è¾¹æœ€å°ä¸º5-3  å³è¾¹ä¸º5+3
         $left=$this->currPage-$leftPage_num;
-        $left=max($left,1); //×ó±ß×îĞ¡²»ÄÜĞ¡ÓÚ1
-        $right=$left+$this->showPages-1; //×ó±ß¼ÓÏÔÊ¾Ò³Êı¼õ1¾ÍÊÇÓÒ±ßÏÔÊ¾Êı
-        $right=min($right,$this->countPages);  //ÓÒ±ß×î´ó²»ÄÜ´óÓÚ×ÜÒ³Êı
-        $left=max($right-$this->showPages+1,1); //È·¶¨ÓÒ±ßÔÙ¼ÆËã×ó±ß£¬±ØĞë¶ş´Î¼ÆËã
+        $left=max($left,1); //å·¦è¾¹æœ€å°ä¸èƒ½å°äº1
+        $right=$left+$this->showPages-1; //å·¦è¾¹åŠ æ˜¾ç¤ºé¡µæ•°å‡1å°±æ˜¯å³è¾¹æ˜¾ç¤ºæ•°
+        $right=min($right,$this->countPages);  //å³è¾¹æœ€å¤§ä¸èƒ½å¤§äºæ€»é¡µæ•°
+        $left=max($right-$this->showPages+1,1); //ç¡®å®šå³è¾¹å†è®¡ç®—å·¦è¾¹ï¼Œå¿…é¡»äºŒæ¬¡è®¡ç®—
          
         for ($i=$left; $i <= $right; $i++) {
             $_GET['page'] = $i;

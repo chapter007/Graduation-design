@@ -21,7 +21,7 @@ function checkAccount(id,password,teacher) {
 				if(teacher==1){
 					window.location.href='../views/admin/index.php';
 				}else{
-					window.location.href='../views/student/index.php';
+					window.location.href='../views/student/index.php?id='+id+'';
 				}
 			}else{
 				alert("id或者密码错误！");

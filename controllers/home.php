@@ -62,10 +62,10 @@ class home extends controller {
     }
 	
     public function getdata() {
-        if (!isset($_SESSION['s_id'])) {
+        if (!isset($_POST['id'])) {
             Header("Location: ./views/login.php", TRUE, 302);
         }else{
-			$s_id=$_SESSION['s_id'];
+			$s_id=$_POST['id'];
 			$sql = "select * from s_info where id=$s_id";
 			//echo $sql;
 			$result = mysql_query($sql);
@@ -108,10 +108,10 @@ class home extends controller {
     }
 
 	public function get_other_data() {
-        if (!isset($_SESSION['s_id'])) {
+        if (!isset($_POST['id'])) {
             Header("Location: ./views/login.php", TRUE, 302);
         } 
-		$s_id=$_SESSION['s_id'];
+		$s_id=$_POST['id'];
         $sql = "select * from s_other where id=$s_id";
 		//echo $sql;
         $result = mysql_query($sql);
@@ -154,10 +154,10 @@ class home extends controller {
     }
 	
 	public function up_other_data() {
-        if (!isset($_SESSION['s_id'])) {
+        if (!isset($_POST['id'])) {
             Header("Location: ./views/login.php", TRUE, 302);
         } 
-		$id=$_SESSION['s_id'];
+		$id=$_POST['id'];
 		$homework=$_POST['homework'];
 		$attend=$_POST['attend'];
 		$nightlearning=$_POST['nightlearning'];
@@ -202,6 +202,26 @@ class home extends controller {
 			if ($result) {
 				while ($value = mysql_fetch_array($result)) {
 					$num[$i] = array($value["id"],$value["name"],$value["mobile"],$value["qq"],$value["class"],$value["teacher"]);
+					$i++;
+				}
+			}
+			$data['total'] = $i;
+			for($j=0;$j<$i;$j++){
+				$data['s'.$j] = $num[$j];
+			}
+			echo json_encode($data);
+    }
+	
+	public function get_lesson_data() {
+        $id=$_POST['id'];
+		$sql = "SELECT sl.c_id,sc.`name`,ti.`name` as teacher,sl.score from s_lesson as sl,s_course as sc,t_info as ti 
+				where sl.s_id=$id and sl.c_id=sc.id and ti.id=sc.teacher_id";
+		$result = mysql_query($sql);
+		$num = array();
+		$i=0;
+			if ($result) {
+				while ($value = mysql_fetch_array($result)) {
+					$num[$i] = array($value["c_id"],$value["name"],$value["teacher"],$value["score"]);
 					$i++;
 				}
 			}

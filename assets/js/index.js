@@ -158,7 +158,7 @@ function getLessonData(id) {
             if(data.total>0){
 				for(var i=0;i<data.total;i++){
 					var lesson=data['s'+i];
-					var html="<tr><td>"+lesson[0]+"</td><td>"+lesson[1]+"</td><td>"+lesson[2]+"</td><td>"+lesson[3]+"</td></tr>";
+					var html="<tr><td>"+lesson[0]+"</td><td>"+lesson[1]+"</td><td>"+lesson[2]+"</td><td><input value="+lesson[3]+" c_id="+lesson[0]+"></td></tr>";
 					var origin=$("#student_table").html()+html;
 					$("#student_table").html(origin);
 				}
@@ -166,6 +166,36 @@ function getLessonData(id) {
 			}else{
 				$(".loading-container").addClass("loading-inactive");
 				alert('获取数据失败!');
+			}
+        },
+        error: function () {
+            alert('获取数据失败!');
+        }
+    });
+}
+
+function update_lesson_info(){
+	var id=$("#s_id").val();
+	//TODO:获取到课程和评分的数据，会有多组
+	var lesson_num=$("td>input").size();
+	var lesson=new Array();
+	for(var i=0;i<lesson_num;i++){
+		var score=$("td>input:eq("+i+")").val();
+		var c_id=$("td>input:eq("+i+")").attr("c_id");
+		lesson[i]={id:c_id,score:score};
+	}
+	$.ajax({
+        type: "post",
+        url: "../../index.php?c=home&a=up_lesson_data",
+        dataType: "json",
+        data: {
+			id:id,
+			lesson:lesson
+        },
+        async: true,
+        success: function (data) {
+            if(data.result==1){
+				alert("更新数据成功");
 			}
         },
         error: function () {

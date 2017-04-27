@@ -192,6 +192,24 @@ class home extends controller {
         echo json_encode($data);
     }
 
+	public function up_lesson_data() {
+        $id=$_POST['id'];
+		$lesson=$_POST['lesson'];
+		//lesson在js里是一个数组对象，这里需要把它解开
+		//print_r($lesson);break;
+		$sql=makeSql($lesson);
+		//开始执行插入or更新命令
+		$result = mysql_query($sql);
+        
+		if ($result) {
+			$data['result'] = 1;
+		}else{
+			$data['result'] = 0;
+		}
+        
+        echo json_encode($data);
+    }
+	
 	public function get_student_data() {
         
 			$sql = "select * from s_info limit 20";
@@ -246,4 +264,15 @@ class home extends controller {
 			}
 			echo json_encode($data);
     }
+	
 }
+
+	function makeSql($lesson){
+		$sql="UPDATE s_lesson
+			SET score = CASE c_id ";
+		foreach($lesson as $les){
+			$tmp="WHEN {$les['id']} THEN {$les['score']} ";
+			$sql.=$tmp;
+		}
+		return $sql."END WHERE s_id=139074277";
+	}

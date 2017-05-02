@@ -117,7 +117,7 @@
                   </div>
 
                   <div class="col-lg-offset-10 buttons-preview">
-                    <a class="btn btn-blue" onclick="update_info()">保存</a> <a class="btn btn-blue">取消</a>
+                    <a class="btn btn-blue" onclick="update_info(this)">保存</a> <a class="btn btn-blue">取消</a>
                   </div>
                 </div>
               </div>
@@ -330,7 +330,7 @@
                     <div class="horizontal-space"></div>
 
                     <div class="col-lg-offset-10 buttons-preview">
-                      <a class="btn btn-blue" onclick="update_other_info()">保存</a> <a class="btn btn-blue">取消</a>
+                      <a class="btn btn-blue" onclick="update_other_info(this)">保存</a> <a class="btn btn-blue">取消</a>
                     </div>
                   </div>
                 </div>
@@ -375,7 +375,7 @@
                     <div class="horizontal-space"></div>
 
                     <div class="col-lg-offset-10 buttons-preview">
-                      <a class="btn btn-blue" onclick="update_lesson_info()">保存</a> <a class="btn btn-blue">取消</a>
+                      <a class="btn btn-blue" onclick="update_lesson_info(this)">保存</a> <a class="btn btn-blue">取消</a>
                     </div>
                   </div>
                 </div>

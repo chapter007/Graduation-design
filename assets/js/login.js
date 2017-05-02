@@ -6,6 +6,12 @@ $(document).ready(function () {
 });
 
 function checkAccount(id,password,teacher) {
+	if(teacher==0){
+		$("#login_btn").text("请稍等");
+	}else{
+		$("#tlogin_btn").text("请稍等");
+
+	}
     $.ajax({
         type: "post",
         url: "../index.php?c=home&a=check_account",
@@ -25,10 +31,17 @@ function checkAccount(id,password,teacher) {
 				}
 			}else{
 				alert("id或者密码错误！");
+				if(teacher==0){
+					$("#login_btn").text("登录");
+				}else{
+					$("#tlogin_btn").text("教师登录");
+
+				}
 			}
         },
         error: function () {
             alert('获取数据失败!');
+			
         }
     });
 }

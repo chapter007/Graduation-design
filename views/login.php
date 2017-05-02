@@ -43,8 +43,8 @@
                                     <a href="javascript:alert('默认密码是学号')">忘记密码?</a>
                                 </div>
                                 <div class="loginbox-submit" style="margin-top:10%">
-                                    <div class="btn btn-primary btn-block" onclick="checkAccount($('#s_id').val(),$('#password').val(),0)" style="width:30%">登录</div>
-									<div class="btn btn-primary btn-block" onclick="checkAccount($('#s_id').val(),$('#password').val(),1)" style="width:45%;margin-top: 0px;">教师登录</div>
+                                    <div class="btn btn-primary" onclick="checkAccount($('#s_id').val(),$('#password').val(),0)" id="login_btn">登录</div>
+									<div class="btn btn-primary" onclick="checkAccount($('#s_id').val(),$('#password').val(),1)" id="tlogin_btn">教师登录</div>
                                 </div>
 								</div>
                                 

@@ -71,7 +71,8 @@ function getOtherData(id) {
     });
 }
 
-function update_info(){
+function update_info(btn){
+	btn.text="请稍等";
 	var id=$("#s_id").val();
 	var name=$("#name").val();
 	var mobile=$("#mobile").val();
@@ -95,14 +96,17 @@ function update_info(){
             if(data.result==1){
 				alert("更新数据成功");
 			}
+			btn.text="保存";
         },
         error: function () {
             alert('获取数据失败!');
+			btn.text="保存";
         }
     });
 }
 
-function update_other_info(){
+function update_other_info(btn){
+	btn.text="请稍等";
 	var id=$("#s_id").val();
 	var homework=$.trim($("#homework option:selected").text());
 	var attend=$.trim($("#attend option:selected").text());
@@ -138,9 +142,11 @@ function update_other_info(){
             if(data.result==1){
 				alert("更新数据成功");
 			}
+			btn.text="保存";
         },
         error: function () {
             alert('获取数据失败!');
+			btn.text="保存";
         }
     });
 }
@@ -174,7 +180,8 @@ function getLessonData(id) {
     });
 }
 
-function update_lesson_info(){
+function update_lesson_info(btn){
+	btn.text="请稍等";
 	var id=$("#s_id").val();
 	//TODO:获取到课程和评分的数据，会有多组
 	var lesson_num=$("td>input").size();
@@ -196,10 +203,12 @@ function update_lesson_info(){
         success: function (data) {
             if(data.result==1){
 				alert("更新数据成功");
+				btn.text="保存";
 			}
         },
         error: function () {
             alert('获取数据失败!');
+			btn.text="保存";
         }
     });
 }

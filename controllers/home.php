@@ -132,9 +132,6 @@ class home extends controller {
     }
 	
 	public function up_data() {
-        if (!isset($_SESSION['s_id'])) {
-            Header("Location: ./views/login.php", TRUE, 302);
-        } 
 		$id=$_POST['id'];
 		$name=$_POST['name'];
 		$mobile=$_POST['mobile'];

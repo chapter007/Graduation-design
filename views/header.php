@@ -50,13 +50,12 @@
                             <!--Login Area Dropdown-->
 
                             <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
-                                <li class="username"><a>admin</a></li>
+                                <li class="username"><a></a></li>
                                 <li class="email"><a></a></li>
 
                                 <!--Avatar Area-->
                                 <li class="edit">
-                                    <a href="profile.html" class="pull-left">个人中心</a>
-                                    <a href="#" class="pull-right">修改密码</a>
+                                    <a href="#" class="pull-right" onclick="change_passwd()">修改密码</a>
                                 </li>
                                 <!--/Theme Selector Area-->
                                 <li class="dropdown-footer">
@@ -75,4 +74,6 @@
         </div>
     </div>
 </div>
-<!-- /Navbar -->
+<div class="widget-body" id="change_passwd" style="display: none; height: auto;">
+	<?php include '../change_passwd.php'; ?>
+</div><!--学生信息-->

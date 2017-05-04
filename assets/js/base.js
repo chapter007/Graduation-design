@@ -1,5 +1,4 @@
-//处理添加业务路径
-
+var id=getQueryString("id");
 
 function getSingleData(id) {
     $.ajax({

@@ -1,13 +1,17 @@
+
 //处理添加业务路径
 $(document).ready(function () {
     $.ajaxSetup({
         async: true
     });
-	var id=getQueryString("id");
-    getData(id);
+	getData(id);
 	getOtherData(id);
 	getLessonData(id);
 });
+
+function change_passwd(){
+	$("#change_passwd").show();
+}
 
 function getData(id) {
     $.ajax({
@@ -29,7 +33,7 @@ function getData(id) {
 				$("#class").val(student[4]);
 				$("#teacher").val(student[5]);
 				$("#welcome").text("欢迎光临："+student[1]);
-				$(".email").text(student[0]);
+				$(".email").text("学号："+student[0]);
 				
 			}
         },

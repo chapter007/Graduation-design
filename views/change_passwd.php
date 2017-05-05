@@ -23,8 +23,8 @@
                       </div>
                 </div>
                 <div class="modal-footer">
-                <button type="button" class="btn btn-warning" data-dismiss="modal" onclick="$('#change_passwd').hide()">Close</button> 
-                <button type="button" class="btn btn-primary" onclick="change_passwd(this)">Save</button></div>
+                <button type="button" class="btn btn-warning" data-dismiss="modal" onclick="$('#change_passwd').hide()">关闭</button> 
+                <button type="button" class="btn btn-primary" onclick="change_passwd(this)">保存</button></div>
               </div>
               <!-- /.modal-content -->
             </div>

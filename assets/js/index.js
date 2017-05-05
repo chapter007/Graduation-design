@@ -12,7 +12,7 @@ $(document).ready(function () {
 function change_passwd(btn){
 	var passwd=$("#n_passwd").val();
 	btn.text="请稍等";
-	alert(passwd);
+	//alert(passwd);
 	$.ajax({
         type: "post",
         url: "../../index.php?c=home&a=change_passwd",
@@ -23,7 +23,7 @@ function change_passwd(btn){
         },
         async: true,
         success: function (data) {
-            if(data.total==1){
+            if(data.result==1){
 				alert('修改密码成功，请重新登录');
 			}
         },

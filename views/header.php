@@ -55,7 +55,7 @@
 
                                 <!--Avatar Area-->
                                 <li class="edit">
-                                    <a href="#" class="pull-right" onclick="change_passwd()">修改密码</a>
+                                    <a href="#" class="pull-right" onclick="$('#change_passwd').show();">修改密码</a>
                                 </li>
                                 <!--/Theme Selector Area-->
                                 <li class="dropdown-footer">

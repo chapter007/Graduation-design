@@ -207,6 +207,22 @@ class home extends controller {
         echo json_encode($data);
     }
 	
+	public function change_passwd() {
+        $id=$_POST['id'];
+		$passwd=$_POST['passwd'];
+		$sql="update s_info set `password` = '$passwd' where id=$id";
+		//开始执行插入or更新命令
+		$result = mysql_query($sql);
+        
+		if ($result) {
+			$data['result'] = 1;
+		}else{
+			$data['result'] = 0;
+		}
+        
+        echo json_encode($data);
+    }
+	
 	public function get_student_data() {
         
 			$sql = "select * from s_info limit 20";

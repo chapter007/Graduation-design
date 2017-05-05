@@ -9,8 +9,28 @@ $(document).ready(function () {
 	getLessonData(id);
 });
 
-function change_passwd(){
-	$("#change_passwd").show();
+function change_passwd(btn){
+	var passwd=$("#n_passwd").val();
+	btn.text="请稍等";
+	alert(passwd);
+	$.ajax({
+        type: "post",
+        url: "../../index.php?c=home&a=change_passwd",
+        dataType: "json",
+        data: {
+			id:id,
+			passwd:passwd
+        },
+        async: true,
+        success: function (data) {
+            if(data.total==1){
+				alert('修改密码成功，请重新登录');
+			}
+        },
+        error: function () {
+            alert('获取数据失败!');
+        }
+    });
 }
 
 function getData(id) {

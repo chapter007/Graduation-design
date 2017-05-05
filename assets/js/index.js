@@ -10,8 +10,8 @@ $(document).ready(function () {
 });
 
 function change_passwd(btn){
-	var passwd=$("#n_passwd").val();
 	btn.text="请稍等";
+	var passwd=$("#n_passwd").val();
 	//alert(passwd);
 	$.ajax({
         type: "post",
@@ -25,6 +25,7 @@ function change_passwd(btn){
         success: function (data) {
             if(data.result==1){
 				alert('修改密码成功，请重新登录');
+				location.href="../../index.php";
 			}
         },
         error: function () {
@@ -52,6 +53,7 @@ function getData(id) {
 				$("#qq").val(student[3]);
 				$("#class").val(student[4]);
 				$("#teacher").val(student[5]);
+				$("#o_passwd").val(student[6]);
 				$("#welcome").text("欢迎光临："+student[1]);
 				$(".email").text("学号："+student[0]);
 				

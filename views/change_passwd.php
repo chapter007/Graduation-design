@@ -15,8 +15,8 @@
 							<input class="form-control" type="text" id="o_passwd" value="原密码">
 							</div>
 						</div>
-						
-					  <div class="col-lg-6" style="width:100%;margin-top5%">
+						<br>
+					  <div class="col-lg-6" style="width:100%;">
                         <div class="col-lg-9">
                           <input class="form-control" type="text" id="n_passwd" value="新密码">
                         </div>
@@ -24,7 +24,7 @@
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-warning" data-dismiss="modal" onclick="$('#change_passwd').hide()">关闭</button> 
-                <button type="button" class="btn btn-primary" onclick="change_passwd(this)">保存</button></div>
+                <a type="button" class="btn btn-primary" onclick="change_passwd(this)">保存</a></div>
               </div>
               <!-- /.modal-content -->
             </div>

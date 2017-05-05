@@ -73,7 +73,7 @@ class home extends controller {
 			$i=0;
 			if ($result) {
 				while ($value = mysql_fetch_array($result)) {
-					$num[$i] = array($value["id"],$value["name"],$value["mobile"],$value["qq"],$value["class"],$value["teacher"]);
+					$num[$i] = array($value["id"],$value["name"],$value["mobile"],$value["qq"],$value["class"],$value["teacher"],$value["password"]);
 					$i++;
 				}
 			}

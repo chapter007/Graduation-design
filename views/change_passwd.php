@@ -1,6 +1,6 @@
 
     <div class="col-lg-6 col-sm-6 col-xs-12" style="width: 50%;margin-left: 25%;z-index: 100;position: fixed;margin-top: 5%;">
-      <div class="well">
+      <div class="well" style="box-shadow: 0 0 0px rgba(0, 0, 0, .2);background-color: rgba(251, 251, 251, 0);">
         <div class="modal-preview">
           <div class="modal modal-primary">
             <div class="modal-dialog">

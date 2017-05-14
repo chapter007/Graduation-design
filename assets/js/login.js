@@ -25,12 +25,12 @@ function checkAccount(id,password,teacher) {
         success: function (data) {
             if(data.result==1){
 				if(teacher==1){
-					window.location.href='../views/admin/index.php';
+					window.location.href='../views/admin/index.php?id='+id+'';
 				}else{
 					window.location.href='../views/student/index.php?id='+id+'';
 				}
 			}else{
-				alert("id或者密码错误！");
+				alert("id或者密码错误!");
 				if(teacher==0){
 					$("#login_btn").text("登录");
 				}else{

@@ -54,7 +54,6 @@ function getStudentData() {
     });
 }
 
-
 function show_info(id){
 	$("#show_info").show();
 	$(".loading-container").removeClass("loading-inactive");

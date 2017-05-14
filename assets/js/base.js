@@ -54,24 +54,6 @@ function getStudentData() {
     });
 }
 
-function getPageData() {
-    $.ajax({
-        type: "post",
-        url: "../../index.php?c=home&a=get_page_data",
-        dataType: "json",
-        data: {
-        },
-        async: true,
-        success: function (data) {
-            if(data.total>0){
-				setPagination(data.total);
-			}
-        },
-        error: function () {
-            alert('获取数据失败!');
-        }
-    });
-}
 
 function show_info(id){
 	$("#show_info").show();

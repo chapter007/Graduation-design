@@ -5,6 +5,6 @@ $(document).ready(function () {
     });
     getStudentData();
 	$("small").text("学生信息管理系统");
-	getPageData();
+	//getPageData();
 });
 

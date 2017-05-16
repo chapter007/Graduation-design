@@ -9,16 +9,16 @@
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="$('#change_passwd').hide()">×</button>
                   <h4 class="modal-title">修改密码</h4>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" style="height: 125px;">
 						<div class="col-lg-6" style="width:100%">
 							<div class="col-lg-9">
-							<input class="form-control" type="text" id="o_passwd" value="原密码">
+							<input class="form-control" type="text" id="o_passwd" placeholder="原密码">
 							</div>
 						</div>
 						<br>
-					  <div class="col-lg-6" style="width:100%;">
+					  <div class="col-lg-6" style="width:100%;margin-top:5%">
                         <div class="col-lg-9">
-                          <input class="form-control" type="text" id="n_passwd" value="新密码">
+                          <input class="form-control" type="text" id="n_passwd" placeholder="新密码">
                         </div>
                       </div>
                 </div>

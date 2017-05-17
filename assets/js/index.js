@@ -77,7 +77,7 @@ function getOtherData(id) {
         success: function (data) {
             if(data.total==1){
 				var oinfo=data.student;
-				$("#homework option:selected").text(oinfo[1]);
+				$("#homework").val("all");
 				$("#attend option:selected").text(oinfo[2]);
 				$("#nightlearning").val(oinfo[3]);
 				$("#librarylend").val(oinfo[4]);

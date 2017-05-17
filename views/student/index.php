@@ -143,15 +143,15 @@
 
                         <div class="col-lg-9">
                           <select class="form-control" id="homework">
-                            <option value="">
+                            <option value="all">
                               全部独立完成
                             </option>
 
-                            <option value="">
+                            <option value="some">
                               独立完成2/3
                             </option>
 
-                            <option value="">
+                            <option value="little">
                               独立完成1/3
                             </option>
                           </select>

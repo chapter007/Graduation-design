@@ -77,17 +77,17 @@ function getOtherData(id) {
         success: function (data) {
             if(data.total==1){
 				var oinfo=data.student;
-				$("#homework").val("all");
-				$("#attend option:selected").text(oinfo[2]);
+				$("#homework").val(oinfo[1]);
+				$("#attend").val(oinfo[2]);
 				$("#nightlearning").val(oinfo[3]);
 				$("#librarylend").val(oinfo[4]);
 				$("#feelhard").val(oinfo[5]);
-				$("#generalfeel option:selected").text(oinfo[6]);
-				$("#graduateplan option:selected").text(oinfo[7]);
-				$("#worklearning option:selected").text(oinfo[8]);
-				$("#sports option:selected").text(oinfo[9]);
-				$("#attendactivity option:selected").text(oinfo[10]);
-				$("#playgame option:selected").text(oinfo[11]);
+				$("#generalfeel").val(oinfo[6]);
+				$("#graduateplan").val(oinfo[7]);
+				$("#worklearning").val(oinfo[8]);
+				$("#sports").val(oinfo[9]);
+				$("#attendactivity").val(oinfo[10]);
+				$("#playgame").val(oinfo[11]);
 			}
 			//$(".loading-container").addClass("loading-inactive");
         },
@@ -134,17 +134,17 @@ function update_info(btn){
 function update_other_info(btn){
 	btn.text="请稍等";
 	var id=$("#s_id").val();
-	var homework=$.trim($("#homework option:selected").text());
-	var attend=$.trim($("#attend option:selected").text());
+	var homework=$.trim($("#homework").val());
+	var attend=$.trim($("#attend").val());
 	var nightlearning=$("#nightlearning").val();
 	var librarylend=$("#librarylend").val();
 	var feelhard=$("#feelhard").val();
-	var generalfeel=$.trim($("#generalfeel option:selected").text());
-	var graduateplan=$.trim($("#graduateplan option:selected").text());
-	var worklearning=$.trim($("#worklearning option:selected").text());
-	var sports=$.trim($("#sports option:selected").text());
-	var attendactivity=$.trim($("#attendactivity option:selected").text());
-	var playgame=$.trim($("#playgame option:selected").text());
+	var generalfeel=$.trim($("#generalfeel").val());
+	var graduateplan=$.trim($("#graduateplan").val());
+	var worklearning=$.trim($("#worklearning").val());
+	var sports=$.trim($("#sports").val());
+	var attendactivity=$.trim($("#attendactivity").val());
+	var playgame=$.trim($("#playgame").val());
 	$.ajax({
         type: "post",
         url: "../../index.php?c=home&a=up_other_data",

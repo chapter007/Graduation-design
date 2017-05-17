@@ -143,15 +143,15 @@
 
                         <div class="col-lg-9">
                           <select class="form-control" id="homework">
-                            <option value="all">
+                            <option value="0">
                               全部独立完成
                             </option>
 
-                            <option value="some">
+                            <option value="1">
                               独立完成2/3
                             </option>
 
-                            <option value="little">
+                            <option value="2">
                               独立完成1/3
                             </option>
                           </select>
@@ -163,15 +163,15 @@
 
                         <div class="col-lg-9">
                           <select class="form-control" id="attend">
-                            <option value="">
+                            <option value="0">
                               从未缺课
                             </option>
 
-                            <option value="">
+                            <option value="1">
                               有缺课x次
                             </option>
 
-                            <option value="">
+                            <option value="2">
                               有旷课x次
                             </option>
                           </select>
@@ -195,15 +195,15 @@
 
                         <div class="col-lg-9">
                           <select class="form-control" id="playgame">
-                            <option value="">
+                            <option value="0">
                               从不
                             </option>
 
-                            <option value="">
+                            <option value="1">
                               偶尔
                             </option>
 
-                            <option value="">
+                            <option value="2">
                               经常
                             </option>
                           </select>
@@ -239,15 +239,15 @@
 
                         <div class="col-lg-9">
                           <select class="form-control" id="generalfeel">
-                            <option value="">
+                            <option value="0">
                               没有任何问题
                             </option>
 
-                            <option value="">
+                            <option value="1">
                               基本跟的上
                             </option>
 
-                            <option value="">
+                            <option value="2">
                               有问题感觉很吃力
                             </option>
                           </select>
@@ -259,11 +259,11 @@
 
                         <div class="col-lg-9">
                           <select class="form-control" id="graduateplan">
-                            <option value="">
+                            <option value="0">
                               有
                             </option>
 
-                            <option value="">
+                            <option value="1">
                               无
                             </option>
                           </select>
@@ -279,11 +279,11 @@
 
                         <div class="col-lg-9">
                           <select class="form-control" id="worklearning">
-                            <option value="">
+                            <option value="0">
                               有
                             </option>
 
-                            <option value="">
+                            <option value="1">
                               无
                             </option>
                           </select>
@@ -295,11 +295,11 @@
 
                         <div class="col-lg-9">
                           <select class="form-control" id="sports">
-                            <option value="">
+                            <option value="0">
                               有
                             </option>
 
-                            <option value="">
+                            <option value="1">
                               无
                             </option>
                           </select>
@@ -315,11 +315,11 @@
 
                         <div class="col-lg-9">
                           <select class="form-control" id="attendactivity">
-                            <option value="">
+                            <option value="0">
                               有
                             </option>
 
-                            <option value="">
+                            <option value="1">
                               无
                             </option>
                           </select>

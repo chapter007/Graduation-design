@@ -329,80 +329,27 @@
                   </div>
 
                   <div class="form-group">
-                    <div class="row">
-                      <div class="col-lg-6">
-                        <label class="col-lg-3 control-label">作业情况：</label>
-
-                        <div class="col-lg-9">
-                          <select class="form-control">
-                            <option value="">
-                              全部独立完成
-                            </option>
-
-                            <option value="">
-                              独立完成2/3
-                            </option>
-
-                            <option value="">
-                              独立完成1/3
-                            </option>
-                          </select>
-                        </div>
-                      </div>
-
-                      <div class="col-lg-6">
-                        <label class="col-lg-3 control-label">出勤情况：</label>
-
-                        <div class="col-lg-9">
-                          <select class="form-control">
-                            <option value="">
-                              从未缺课
-                            </option>
-
-                            <option value="">
-                              有缺课x次
-                            </option>
-
-                            <option value="">
-                              有旷课x次
-                            </option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="horizontal-space"></div>
-
-                    <div class="row">
-                      <div class="col-lg-6">
-                        <label class="col-lg-3 control-label">晚自习情况：</label>
-
-                        <div class="col-lg-9">
-                          <input class="form-control" type="text" />
-                        </div>
-                      </div>
-
-                      <div class="col-lg-6">
-                        <label class="col-lg-3 control-label">玩网络游戏情况：</label>
-
-                        <div class="col-lg-9">
-                          <select class="form-control">
-                            <option value="">
-                              从不
-                            </option>
-
-                            <option value="">
-                              偶尔
-                            </option>
-
-                            <option value="">
-                              经常
-                            </option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-
+					<table class="table table-hover table-striped table-bordered">
+                                    <thead class="bordered-blueberry">
+                                        <tr>
+                                            <th>
+                                                课程号
+                                            </th>
+                                            <th>
+												课程名
+                                            </th>
+                                            <th>
+                                                授课老师
+                                            </th>
+                                            <th>
+                                                评价
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="student_table">
+                                        
+                                    </tbody>
+                                </table>
                     <div class="horizontal-space"></div>
 
                   </div>

@@ -30,7 +30,8 @@ function getSingleData(id) {
 				$("#sports").val(student[14]);
 				$("#attendactivity").val(student[15]);
 				$("#playgame").val(student[16]);
-				$(".loading-container").addClass("loading-inactive");
+				getLessonData(id);
+				//$(".loading-container").addClass("loading-inactive");
 			}
         },
         error: function () {
@@ -52,8 +53,8 @@ function getStudentData() {
 				for(var i=0;i<data.total;i++){
 					var student=data['s'+i];
 					var html="<tr><td>"+student[0]+"</td><td>"+student[1]+"</td><td>"+student[4]+"</td><td>"+student[5]+"</td><td>"+student[2]+"</td><td>"+student[3]+"</td><td><button onclick='javascript:show_info("+student[0]+")'>查看</button></td></tr>";
-					var origin=$("#student_table").html()+html;
-					$("#student_table").html(origin);
+					var origin=$("#student_table_all").html()+html;
+					$("#student_table_all").html(origin);
 				}
 				setPagination(data.total);
 				$(".loading-container").addClass("loading-inactive");
@@ -96,6 +97,35 @@ function makeElementCode(page){
 	}else{
 		return "";
 	}
+}
+
+function getLessonData(id) {
+    $.ajax({
+        type: "post",
+        url: "../../index.php?c=home&a=get_lesson_data",
+        dataType: "json",
+        data: {
+			id:id
+        },
+        async: true,
+        success: function (data) {
+            if(data.total>0){
+				for(var i=0;i<data.total;i++){
+					var lesson=data['s'+i];
+					var html="<tr><td>"+lesson[0]+"</td><td>"+lesson[1]+"</td><td>"+lesson[2]+"</td><td><input value="+lesson[3]+" c_id="+lesson[0]+"></td></tr>";
+					var origin=$("#student_table").html()+html;
+					$("#student_table").html(origin);
+				}
+				$(".loading-container").addClass("loading-inactive");
+			}else{
+				$(".loading-container").addClass("loading-inactive");
+				alert('获取数据失败!');
+			}
+        },
+        error: function () {
+            alert('获取数据失败!');
+        }
+    });
 }
 
 String.prototype.format = function (){

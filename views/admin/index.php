@@ -70,7 +70,7 @@
                                             </th>
                                         </tr>
                                     </thead>
-                                    <tbody id="student_table">
+                                    <tbody id="student_table_all">
                                         
                                     </tbody>
                                 </table>

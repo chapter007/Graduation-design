@@ -176,7 +176,7 @@ function update_other_info(btn){
     });
 }
 
-function getLessonData(id) {
+/*function getLessonData(id) {
     $.ajax({
         type: "post",
         url: "../../index.php?c=home&a=get_lesson_data",
@@ -203,7 +203,7 @@ function getLessonData(id) {
             alert('获取数据失败!');
         }
     });
-}
+}*/
 
 function update_lesson_info(btn){
 	btn.text="请稍等";

@@ -186,7 +186,19 @@
                         <label class="col-lg-3 control-label">晚自习情况：</label>
 
                         <div class="col-lg-9">
-                          <input class="form-control" type="text" id="nightlearning" />
+                          <select class="form-control" id="nightlearning">
+                            <option value="0">
+                              经常去
+                            </option>
+
+                            <option value="1">
+                              一周3次以上
+                            </option>
+
+                            <option value="2">
+                              很少去
+                            </option>
+                          </select>
                         </div>
                       </div>
 
@@ -218,7 +230,19 @@
                         <label class="col-lg-3 control-label">图书借阅情况：</label>
 
                         <div class="col-lg-9">
-                          <input class="form-control" type="text" id="librarylend" />
+                          <select class="form-control" id="librarylend">
+                            <option value="0">
+                              从不
+                            </option>
+
+                            <option value="1">
+                              偶尔
+                            </option>
+
+                            <option value="2">
+                              经常
+                            </option>
+                          </select>
                         </div>
                       </div>
 

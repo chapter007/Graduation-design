@@ -19,6 +19,17 @@ function getSingleData(id) {
 				$("#qq").val(student[3]);
 				$("#class").val(student[4]);
 				$("#teacher").val(student[5]);
+				$("#homework").val(student[6]);
+				$("#attend").val(student[7]);
+				$("#nightlearning").val(student[8]);
+				$("#librarylend").val(student[9]);
+				$("#feelhard").val(student[10]);
+				$("#generalfeel").val(student[11]);
+				$("#graduateplan").val(student[12]);
+				$("#worklearning").val(student[13]);
+				$("#sports").val(student[14]);
+				$("#attendactivity").val(student[15]);
+				$("#playgame").val(student[16]);
 				$(".loading-container").addClass("loading-inactive");
 			}
         },

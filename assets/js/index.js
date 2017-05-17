@@ -56,7 +56,6 @@ function getData(id) {
 				$("#o_passwd").val(student[6]);
 				$("#welcome").text("欢迎光临："+student[1]);
 				$(".email").text("学号："+student[0]);
-				
 			}
         },
         error: function () {

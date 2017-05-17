@@ -86,16 +86,17 @@ class home extends controller {
     }
 	
 	public function get_single_data() {
-       
+			//在这个函数里把所有学生数据都读出来
 			$s_id=$_POST['id'];
-			$sql = "select * from s_info where id=$s_id";
+			$sql = "select * from s_info as si,s_other as so where so.id=$s_id and so.id=si.id";
 			//echo $sql;
 			$result = mysql_query($sql);
 			$num = array();
 			$i=0;
 			if ($result) {
 				while ($value = mysql_fetch_array($result)) {
-					$num[$i] = array($value["id"],$value["name"],$value["mobile"],$value["qq"],$value["class"],$value["teacher"]);
+					$num[$i] = array($value["id"],$value["name"],$value["mobile"],$value["qq"],$value["class"],$value["teacher"],
+									$value["homework"],$value["attend"],$value["nightlearning"],$value["librarylend"],$value["feelhard"],$value["generalfeel"],$value["graduateplan"],$value["worklearning"],$value["sports"],$value["attendactivity"],$value["playgame"]);
 					$i++;
 				}
 			}

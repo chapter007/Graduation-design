@@ -168,11 +168,11 @@
                             </option>
 
                             <option value="1">
-                              有缺课x次
+                              有缺课不超过3次
                             </option>
 
                             <option value="2">
-                              有旷课x次
+                              有缺课超过3次
                             </option>
                           </select>
                         </div>

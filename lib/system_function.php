@@ -221,12 +221,4 @@ function substr_cut($str, $len, $Append = true) {
     return $StringLast;
 }
 
-function getSysTile() {
-    return '三实信息系统健康监测平台V1.0';
-}
-
-function getCompany() {
-    return '安徽三实信息技术服务有限公司';
-}
-
 ?>

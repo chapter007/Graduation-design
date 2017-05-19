@@ -106,7 +106,6 @@ class controller {
         include($view_file);
     }
     
-    
     /**
      * 加载emial
      */

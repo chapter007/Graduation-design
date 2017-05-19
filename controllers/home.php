@@ -39,7 +39,7 @@ class home extends controller {
 		$is_teacher=$_POST['teacher'];
 		
 		if($is_teacher==1){//是老师登陆
-			$sql="select * from t_info where id= $id and password='$password'";
+			$sql="select * from t_info where id= $id and password='$password' and admin=1";
 			$result=mysql_query($sql);
 			$tmp=mysql_num_rows($result);
 			if($tmp==1){

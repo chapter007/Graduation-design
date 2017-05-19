@@ -30,10 +30,11 @@ function checkAccount(id,password,teacher) {
 					window.location.href='../views/student/index.php?id='+id+'';
 				}
 			}else{
-				alert("id或者密码错误!");
 				if(teacher==0){
+					alert("id或者密码错误!");
 					$("#login_btn").text("登录");
 				}else{
+					alert("id或者密码错误或者没有权限!");
 					$("#tlogin_btn").text("教师登录");
 
 				}

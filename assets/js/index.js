@@ -4,6 +4,7 @@ $(document).ready(function () {
     $.ajaxSetup({
         async: true
     });
+	$("#teacher_bar").css({'display':'none'});
 	getData(id);
 	getOtherData(id);
 	getLessonData(id);
@@ -56,6 +57,7 @@ function getData(id) {
 				$("#o_passwd").val(student[6]);
 				$("#welcome").text("欢迎光临："+student[1]);
 				$(".email").text("学号："+student[0]);
+				$(".username").text("姓名："+student[1]);
 			}
         },
         error: function () {

@@ -38,7 +38,7 @@
 
       <div class="page-content" style="margin-left: 0;">
         <div class="page-body">
-          <div class="row">
+          <div class="row" style="margin-top:5%">
             <div class="col-lg-12">
               <div class="widget radius-bordered">
                 <div class="widget-header">
@@ -410,9 +410,7 @@
       </div>
     </div><!-- /Page Content -->
   </div><!--Basic Scripts-->
-  <script src="../../script/jquery-1.8.3.js">
-</script> <script src="../../script/jquery-ui-1.9.2.min.js">
-</script> <script src="../../script/jquery.ui.touch-punch-0.2.2.min.js">
+  <script src="../../assets/js/jquery-3.2.0.min.js">
 </script> <script src="../../assets/js/bootstrap.min.js">
 </script> <!--Beyond Scripts-->
    <script src="../../assets/js/beyond.min.js">

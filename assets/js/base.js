@@ -1,4 +1,5 @@
 var id=getQueryString("id");
+var page=getQueryString("page");
 
 function getSingleData(id) {
     $.ajax({
@@ -40,32 +41,6 @@ function getSingleData(id) {
     });
 }
 
-function getStudentData() {
-    $.ajax({
-        type: "post",
-        url: "../../index.php?c=home&a=get_student_data",
-        dataType: "json",
-        data: {
-        },
-        async: true,
-        success: function (data) {
-            if(data.total>0){
-				for(var i=0;i<data.total;i++){
-					var student=data['s'+i];
-					var html="<tr><td>"+student[0]+"</td><td>"+student[1]+"</td><td>"+student[4]+"</td><td>"+student[5]+"</td><td>"+student[2]+"</td><td>"+student[3]+"</td><td><button onclick='javascript:show_info("+student[0]+")'>查看</button></td></tr>";
-					var origin=$("#student_table_all").html()+html;
-					$("#student_table_all").html(origin);
-				}
-				setPagination(data.total);
-				$(".loading-container").addClass("loading-inactive");
-			}
-        },
-        error: function () {
-            alert('获取数据失败!');
-        }
-    });
-}
-
 function show_info(id){
 	$("#show_info").show();
 	$(".loading-container").removeClass("loading-inactive");
@@ -89,9 +64,9 @@ function setPagination(totalData){
 
 function makeElementCode(page){
 	if(page>1){
-		var elementCode="<li><a href='#'>2</a></li>";
+		var elementCode="<li><a href='./index.php?id="+id+"&page=2'>2</a></li>";
 		for(var i=3;i<=page;i++){
-			elementCode+="<li><a href='#'>"+i+"</a></li>";
+			elementCode+="<li><a href='./index.php?id="+id+"&page="+i+"'>"+i+"</a></li>";
 		}
 		return elementCode;
 	}else{

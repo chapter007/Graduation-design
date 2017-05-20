@@ -22,8 +22,9 @@
   <link href="../../assets/css/animate.min.css" rel="stylesheet" />
   <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
 
-  <script src="../../assets/js/skins.min.js">
-</script>
+  <script src="../../assets/js/skins.min.js"></script>
+  <script src="../../assets/js/jquery-3.2.0.min.js"></script>
+  <script src="../../assets/js/skins.min.js"></script>
 </head><!-- /Head -->
 <!-- Body -->
 
@@ -39,7 +40,7 @@
       <div class="page-content" style="margin-left: 0;">
         <div class="page-body">
         
-		<div class="col-xs-12">
+		<div class="col-xs-12" style="margin-top:5%">
                             <div class="well with-header with-footer">
                                 <div class="header bg-palegreen">
                                     学生信息表
@@ -108,11 +109,8 @@
 	
 	
 	
-  </div><!--Basic Scripts-->
-  <script src="../../script/jquery-1.8.3.js">
-</script> <script src="../../script/jquery-ui-1.9.2.min.js">
-</script> <script src="../../script/jquery.ui.touch-punch-0.2.2.min.js">
-</script> <script src="../../assets/js/bootstrap.min.js">
+  </div><!--Basic Scripts--> 
+   <script src="../../assets/js/bootstrap.min.js">
 </script> <!--Beyond Scripts-->
    <script src="../../assets/js/beyond.min.js">
 </script> <!--Page Related Scripts-->

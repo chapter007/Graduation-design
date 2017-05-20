@@ -241,8 +241,9 @@ class home extends controller {
     }
 	
 	public function get_student_data() {
-        
-			$sql = "select * from s_info limit 20";
+			$page=$_POST['page'];
+			$offset=($page-1)*20;
+			$sql = "select * from s_info limit $offset,20";
 			//echo $sql;
 			$result = mysql_query($sql);
 			$num = array();
@@ -256,6 +257,12 @@ class home extends controller {
 			$data['total'] = $i;
 			for($j=0;$j<$i;$j++){
 				$data['s'.$j] = $num[$j];
+			}
+			$sql = "select count(*) as total from s_info";
+			$result = mysql_query($sql);
+			if ($result) {
+				$value = mysql_fetch_array($result);
+				$data['total_all']=$value['total'];
 			}
 			echo json_encode($data);
     }

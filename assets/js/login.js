@@ -25,7 +25,7 @@ function checkAccount(id,password,teacher) {
         success: function (data) {
             if(data.result==1){
 				if(teacher==1){
-					window.location.href='../views/admin/index.php?id='+id+'';
+					window.location.href='../views/admin/index.php?id='+id+'&page=1';
 				}else{
 					window.location.href='../views/student/index.php?id='+id+'';
 				}

@@ -56,17 +56,18 @@ function getQueryString(name) {
 }
 
 function setPagination(totalData){
-	var page=totalData/20;
-	var paginationCode="<ul class='pagination pagination-lg'><li class='disabled'><a href='#'>«</a></li><li class='active'><a href='#' style='z-index:0'>1 <span class='sr-only'>(current)</span></a></li>"+makeElementCode(page)+"<li><a href='#'>»</a></li></ul>";
+	var page=Math.ceil(totalData/20);
+	var paginationCode="<ul class='pagination pagination-lg'><li id='page_1'><a href='./index.php?id="+id+"&page=1' style='z-index:0'>1 <span class='sr-only'>(current)</span></a></li>"+makeElementCode(page)+"</ul>";
 	
 	$("#pagination").html(paginationCode);
+	
 }
 
 function makeElementCode(page){
 	if(page>1){
-		var elementCode="<li><a href='./index.php?id="+id+"&page=2'>2</a></li>";
+		var elementCode="<li id=page_"+2+"><a href='./index.php?id="+id+"&page=2'>2</a></li>";
 		for(var i=3;i<=page;i++){
-			elementCode+="<li><a href='./index.php?id="+id+"&page="+i+"'>"+i+"</a></li>";
+			elementCode+="<li id=page_"+i+"><a href='./index.php?id="+id+"&page="+i+"'>"+i+"</a></li>";
 		}
 		return elementCode;
 	}else{

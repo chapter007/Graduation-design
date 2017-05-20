@@ -3,9 +3,9 @@ $(document).ready(function () {
     $.ajaxSetup({
         async: true
     });
-    getStudentData(page);
-	$("small").text("学生信息管理系统");
+	$(".navbar-brand").text("学生信息管理系统");
 	
+    getStudentData(page);
 });
 
 function getStudentData(page) {
@@ -28,6 +28,7 @@ function getStudentData(page) {
 				//保证了从数据库里拿到不会超过20个
 				var all=data.total_all;
 				setPagination(all);
+				$("#page_"+page+"").addClass("active");
 				$(".loading-container").addClass("loading-inactive");
 			}
         },

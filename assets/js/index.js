@@ -76,7 +76,7 @@ function getOtherData(id) {
         },
         async: true,
         success: function (data) {
-            if(data.total==1){
+            if(data.total==1&&data.student!=null){
 				var oinfo=data.student;
 				$("#homework").val(oinfo[1]);
 				$("#attend").val(oinfo[2]);
@@ -106,6 +106,11 @@ function update_info(btn){
 	var qq=$("#qq").val();
 	var myclass=$("#class").val();
 	var teacher=$("#teacher").val();
+	if(isNull(name)=="none"||isNull(mobile)=="none"||isNull(qq)=="none"||isNull(myclass)=="none"||isNull(teacher)=="none"){
+		alert("请把信息填写完整再提交");
+		btn.text="保存";
+		return;
+	}
 	$.ajax({
         type: "post",
         url: "../../index.php?c=home&a=up_data",
@@ -146,6 +151,11 @@ function update_other_info(btn){
 	var sports=$.trim($("#sports").val());
 	var attendactivity=$.trim($("#attendactivity").val());
 	var playgame=$.trim($("#playgame").val());
+	if(isNull(feelhard)=="none"){
+		alert("请把信息填写完整再提交");
+		btn.text="保存";
+		return;
+	}
 	$.ajax({
         type: "post",
         url: "../../index.php?c=home&a=up_other_data",
@@ -177,35 +187,6 @@ function update_other_info(btn){
         }
     });
 }
-
-/*function getLessonData(id) {
-    $.ajax({
-        type: "post",
-        url: "../../index.php?c=home&a=get_lesson_data",
-        dataType: "json",
-        data: {
-			id:id
-        },
-        async: true,
-        success: function (data) {
-            if(data.total>0){
-				for(var i=0;i<data.total;i++){
-					var lesson=data['s'+i];
-					var html="<tr><td>"+lesson[0]+"</td><td>"+lesson[1]+"</td><td>"+lesson[2]+"</td><td><input value="+lesson[3]+" c_id="+lesson[0]+"></td></tr>";
-					var origin=$("#student_table").html()+html;
-					$("#student_table").html(origin);
-				}
-				$(".loading-container").addClass("loading-inactive");
-			}else{
-				$(".loading-container").addClass("loading-inactive");
-				alert('获取数据失败!');
-			}
-        },
-        error: function () {
-            alert('获取数据失败!');
-        }
-    });
-}*/
 
 function update_lesson_info(btn){
 	btn.text="请稍等";

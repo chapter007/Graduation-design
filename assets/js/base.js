@@ -96,7 +96,7 @@ function getLessonData(s_id) {
 				$(".loading-container").addClass("loading-inactive");
 			}else{
 				$(".loading-container").addClass("loading-inactive");
-				alert('获取数据失败!');
+				alert('未获取到课程数据!');
 			}
         },
         error: function () {
@@ -112,3 +112,11 @@ String.prototype.format = function (){
         s = s.replace(new RegExp("\\{" + i + "\\}", "g"), arguments[i]);
     return s;
 };
+
+/** 
+* 判断是否null 
+* @param data 
+*/
+function isNull(data){ 
+	return (data == "" || data == undefined || data == null) ? "none" : data; 
+}

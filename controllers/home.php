@@ -134,13 +134,13 @@ class home extends controller {
 	
 	public function up_data() {
 		$id=$_POST['id'];
-		$name=$_POST['name'];
-		$mobile=$_POST['mobile'];
-		$qq=$_POST['qq'];
-		$myclass=$_POST['myclass'];
-		$teacher=$_POST['teacher'];
+		$name=isset($_POST['name']) ? $_POST['name']:'null';
+		$mobile=isset($_POST['mobile']) ? $_POST['mobile']:0;
+		$qq=isset($_POST['qq']) ? $_POST['qq']:0;
+		$myclass=isset($_POST['myclass']) ? $_POST['myclass']:0;
+		$teacher=isset($_POST['teacher']) ? $_POST['teacher']:'null';
         $sql = "update s_info set mobile=$mobile,qq=$qq,class='$myclass',teacher='$teacher' where id=$id";
-		//echo $sql;
+		echo $sql;
         $result = mysql_query($sql);
         if ($result) {
 			$data['result'] = 1;

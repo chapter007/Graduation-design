@@ -1,13 +1,13 @@
 var id=getQueryString("id");
 var page=getQueryString("page");
 
-function getSingleData(id) {
+function getSingleData(s_id) {
     $.ajax({
         type: "post",
         url: "../../index.php?c=home&a=get_single_data",
         dataType: "json",
         data: {
-			id:id
+			id:s_id
         },
         async: true,
         success: function (data) {
@@ -31,8 +31,10 @@ function getSingleData(id) {
 				$("#sports").val(student[14]);
 				$("#attendactivity").val(student[15]);
 				$("#playgame").val(student[16]);
-				getLessonData(id);
-				//$(".loading-container").addClass("loading-inactive");
+				getLessonData(s_id);
+				
+				$(".loading-container").removeClass("loading-inactive");
+				//alert(233);
 			}
         },
         error: function () {
@@ -43,7 +45,6 @@ function getSingleData(id) {
 
 function show_info(id){
 	$("#show_info").show();
-	$(".loading-container").removeClass("loading-inactive");
 	getSingleData(id);
 }
 
@@ -75,13 +76,13 @@ function makeElementCode(page){
 	}
 }
 
-function getLessonData(id) {
+function getLessonData(s_id) {
     $.ajax({
         type: "post",
         url: "../../index.php?c=home&a=get_lesson_data",
         dataType: "json",
         data: {
-			id:id
+			id:s_id
         },
         async: true,
         success: function (data) {

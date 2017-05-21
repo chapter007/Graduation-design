@@ -4,7 +4,7 @@ $(document).ready(function () {
         async: true
     });
 	$(".navbar-brand").text("学生信息管理系统");
-	
+	$("#teacher_bar>ul>li:eq(1)>a").attr('href','./analysis.php?id='+id+''); 
     getStudentData(page);
 });
 

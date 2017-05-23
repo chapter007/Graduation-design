@@ -5,16 +5,17 @@ $(document).ready(function () {
     });
 	$(".navbar-brand").text("学生信息管理系统");
 	$("#teacher_bar>ul>li:eq(1)>a").attr('href','./analysis.php?id='+id+''); 
-    getStudentData(page);
+    getStudentData(page,id);
 });
 
-function getStudentData(page) {
+function getStudentData(page,id) {
     $.ajax({
         type: "post",
         url: "../../index.php?c=home&a=get_student_data",
         dataType: "json",
         data: {
-			page:page
+			page:page,
+			t_id:id
         },
         async: true,
         success: function (data) {
@@ -27,9 +28,13 @@ function getStudentData(page) {
 				}
 				//保证了从数据库里拿到不会超过20个
 				var all=data.total_all;
+				var t_name=data.t_name;
 				setPagination(all);
 				$("#page_"+page+"").addClass("active");
 				$(".loading-container").addClass("loading-inactive");
+				$(".username").text("姓名："+t_name);
+				$("#welcome").text("欢迎光临："+t_name);
+				$(".email").text("工号："+id);
 			}
         },
         error: function () {

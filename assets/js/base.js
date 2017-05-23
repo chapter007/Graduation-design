@@ -11,7 +11,7 @@ function getSingleData(s_id) {
         },
         async: true,
         success: function (data) {
-            if(data.total==1){
+            if(data.total==1&&data.student!=null){
 				var student=data.student;
 				//alert(student[0]);
 				$("#s_id").val(student[0]);
@@ -32,9 +32,10 @@ function getSingleData(s_id) {
 				$("#attendactivity").val(student[15]);
 				$("#playgame").val(student[16]);
 				getLessonData(s_id);
-				
-				$(".loading-container").removeClass("loading-inactive");
-				//alert(233);
+			}else{
+				alert("查无此人");
+				$(".loading-container").addClass("loading-inactive");
+				$("#show_info").hide();
 			}
         },
         error: function () {
@@ -45,6 +46,7 @@ function getSingleData(s_id) {
 
 function show_info(id){
 	$("#show_info").show();
+	$(".loading-container").removeClass("loading-inactive");
 	getSingleData(id);
 }
 

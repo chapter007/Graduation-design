@@ -242,6 +242,7 @@ class home extends controller {
 	
 	public function get_student_data() {
 			$page=$_POST['page'];
+			$t_id=$_POST['t_id'];
 			$offset=($page-1)*20;
 			$sql = "select * from s_info limit $offset,20";
 			//echo $sql;
@@ -264,8 +265,39 @@ class home extends controller {
 				$value = mysql_fetch_array($result);
 				$data['total_all']=$value['total'];
 			}
+			//查询老师姓名
+			$sql = "select * from t_info where id= $t_id";
+			$result = mysql_query($sql);
+			if ($result) {
+				$value = mysql_fetch_array($result);
+				$data['t_name']=$value['name'];
+			}
 			echo json_encode($data);
     }
+	
+	public function get_chart_data(){
+		$categroy=$_POST['categroy'];
+		$sql="SELECT $categroy from s_other order by $categroy";
+		$result = mysql_query($sql);
+		$num = array();
+		$i=0;$j=0;$k=0;
+			if ($result) {
+				while ($value = mysql_fetch_array($result)) {
+					if($value["$categroy"]==0){
+						$i++;
+					}else if($value["$categroy"]==1){
+						$j++;
+					}else if($value["$categroy"]==2){
+						$k++;
+					}
+					
+				}
+			}
+			$data['i'] = $i;
+			$data['j'] = $j;
+			$data['k'] = $k;
+		echo json_encode($data);
+	}
 	
 	public function get_lesson_data() {
         $id=$_POST['id'];

@@ -94,7 +94,7 @@
                                                 </a>
                                             </div><!--Widget Buttons-->
                                         </div><!--Widget Header-->
-                                        <div class="widget-body" style="display: block; height: auto;">
+                                        <div class="widget-body" style="display: block; height: auto;z-index:9999">
                                             <?php include '../info.php'; ?>
                                         </div><!--学生信息-->
                                     </div><!--Widget-->

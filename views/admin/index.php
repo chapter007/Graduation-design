@@ -14,16 +14,17 @@
   <link rel="shortcut icon" href="../../assets/img/favicon.png" type="image/x-icon" /><!--Basic Styles-->
  
   <link href="../../assets/css/font-awesome.min.css" rel="stylesheet" />
-  <link href="../../assets/css/weather-icons.min.css" rel="stylesheet" /><!--Fonts-->
+  
   <!--Beyond styles-->
   <link href="../../assets/css/beyond.min.css" rel="stylesheet" type="text/css" />
   <link href="../../assets/css/demo.min.css" rel="stylesheet" />
-  <link href="../../assets/css/typicons.min.css" rel="stylesheet" />
   <link href="../../assets/css/animate.min.css" rel="stylesheet" />
   <link href="../../assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../../assets/css/pagination.css" rel="stylesheet" />
   
   <script src="../../assets/js/skins.min.js"></script>
   <script src="../../assets/js/jquery-3.2.0.min.js"></script>
+  <script src="../../assets/js/jquery.pagination.js"></script>
   <script src="../../assets/js/skins.min.js"></script>
 </head><!-- /Head -->
 <!-- Body -->
@@ -75,11 +76,13 @@
                                         
                                     </tbody>
                                 </table>
-								<div style="margin-top:5%" id="pagination">
+								<div style="margin-top:5%" id="pagination" class="M-box">
                                     
                                 </div>
+								
+								
                                 <div class="footer">
-                                    <code>学生信息表，点击可以查看更多信息</code>
+                                    <code>学生信息表，点击可以查看更多信息,一页最多显示20条数据</code>
                                 </div>
                             </div>
                         </div>
@@ -89,12 +92,12 @@
                                         <div class="widget-header bg-blue">
                                             <span class="widget-caption">详细信息</span>
                                             <div class="widget-buttons">
-                                                <a href="#" onclick="javascript:$('#show_info').hide();">
+                                                <a href="#" onclick="hideElement();">
                                                     <i class="">x</i>
                                                 </a>
-                                            </div><!--Widget Buttons-->
-                                        </div><!--Widget Header-->
-                                        <div class="widget-body" style="display: block; height: auto;z-index:9999">
+                                            </div>
+                                        </div>
+                                        <div class="widget-body" style="display: block; height: auto;z-index:999999">
                                             <?php include '../info.php'; ?>
                                         </div><!--学生信息-->
                                     </div><!--Widget-->

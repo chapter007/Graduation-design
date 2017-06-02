@@ -5,12 +5,17 @@ $(document).ready(function () {
     $.ajaxSetup({
         async: true
     });
+	var t_name=getCookie("t_name");
+	var id=getCookie("t_id");
+	
 	$(".navbar-brand").text("学生信息分析系统");
 	$("#teacher_bar>ul>li:eq(0)").removeClass("active");
 	$("#teacher_bar>ul>li:eq(1)").addClass("active");
 	$(".loading-container").addClass("loading-inactive");
 	$("#teacher_bar>ul>li:eq(0)>a").attr('href','./index.php?id='+id+'&page=1');
-	
+	$(".username").text("姓名："+t_name);
+	$("#welcome").text("欢迎光临："+t_name);
+	$(".email").text("工号："+id);
 	chart_option(0);
 });
 

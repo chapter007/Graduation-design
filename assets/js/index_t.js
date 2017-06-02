@@ -29,37 +29,17 @@ function getStudentData(page,id) {
 				//保证了从数据库里拿到不会超过20个
 				var all=data.total_all;
 				var t_name=data.t_name;
+				setCookie("t_name",t_name,1000);
+				setCookie("t_id",id,1000);
+				
 				setPagination(all);
-				$("#page_"+page+"").addClass("active");
+				//$("#page_"+page+"").addClass("active");
+				//$("#page"+page+"").addClass("active");
 				$(".loading-container").addClass("loading-inactive");
 				$(".username").text("姓名："+t_name);
 				$("#welcome").text("欢迎光临："+t_name);
 				$(".email").text("工号："+id);
-			}
-        },
-        error: function () {
-            alert('获取数据失败!');
-        }
-    });
-}
-
-function change_passwd(btn){
-	btn.text="请稍等";
-	var passwd=$("#n_passwd").val();
-	//alert(passwd);
-	$.ajax({
-        type: "post",
-        url: "../../index.php?c=home&a=change_passwd_t",
-        dataType: "json",
-        data: {
-			id:id,
-			passwd:passwd
-        },
-        async: true,
-        success: function (data) {
-            if(data.result==1){
-				alert('修改密码成功，请重新登录');
-				location.href="../../index.php";
+				$('.footer>code').text("学生信息表，点击可以查看更多信息,一页最多显示20条数据，一共"+all+"条数据")
 			}
         },
         error: function () {

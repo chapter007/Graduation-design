@@ -13,13 +13,9 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <link rel="shortcut icon" href="../../assets/img/favicon.png" type="image/x-icon" /><!--Basic Styles-->
  
-  <link href="../../assets/css/font-awesome.min.css" rel="stylesheet" />
-  <link href="../../assets/css/weather-icons.min.css" rel="stylesheet" /><!--Fonts-->
   <!--Beyond styles-->
   <link href="../../assets/css/beyond.min.css" rel="stylesheet" type="text/css" />
   <link href="../../assets/css/demo.min.css" rel="stylesheet" />
-  <link href="../../assets/css/typicons.min.css" rel="stylesheet" />
-  <link href="../../assets/css/animate.min.css" rel="stylesheet" />
   <link href="../../assets/css/bootstrap.min.css" rel="stylesheet" />
   
   <script src="../../assets/js/jquery-3.2.0.min.js"></script>
@@ -45,7 +41,7 @@
                                         <div class="widget-header bg-blue">
                                             <span class="widget-caption">详细信息</span>
                                             <div class="widget-buttons">
-                                                <a href="#" onclick="javascript:$('#show_info').hide();">
+                                                <a href="#" onclick="hideElement();">
                                                     <i class="">x</i>
                                                 </a>
                                             </div>
@@ -73,9 +69,6 @@
 			  </ul>
 			</div>
 			
-			<!--学生信息统计分析，学生有哪些值得统计的情况？-->
-			<!--学生信息中有，作业情况，出勤情况，晚自习情况，玩游戏情况，图书借阅情况，学习总体感觉，感觉最难的，剩下的几个就算了-->
-			<!--以什么样的方式展示，因为每个情况都只有三种以内的状态，考虑用饼状图-->
 			<div id="main" style="width: 600px;height:400px;margin-left:auto;margin-right:auto;text-alian:center;margin-top:10%"></div>
 		</div>
 		

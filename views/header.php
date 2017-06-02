@@ -78,4 +78,5 @@
 </nav>
 <div class="widget-body" id="change_passwd" style="display: none; height: auto;">
 	<?php include '../change_passwd.php'; ?>
-</div><!--学生信息-->
+</div>
+

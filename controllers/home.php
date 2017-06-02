@@ -194,12 +194,11 @@ class home extends controller {
         $id=$_POST['id'];
 		$lesson=$_POST['lesson'];
 		//lesson在js里是一个数组对象，这里需要把它解开
-		//print_r($lesson);break;
-		$sql=makeSql($lesson);
+		$sql=makeSql($lesson,$id);
 		//开始执行插入or更新命令
 		$result = mysql_query($sql);
         
-		if ($result) {
+		if (mysql_affected_rows()) {
 			$data['result'] = 1;
 		}else{
 			$data['result'] = 0;
@@ -210,28 +209,18 @@ class home extends controller {
 	
 	public function change_passwd() {
         $id=$_POST['id'];
-		$passwd=$_POST['passwd'];
-		$sql="update s_info set `password` = '$passwd' where id=$id";
-		//开始执行插入or更新命令
-		$result = mysql_query($sql);
-        
-		if ($result) {
-			$data['result'] = 1;
+		$n_passwd=$_POST['n_passwd'];
+		$o_passwd=$_POST['o_passwd'];
+		$type=$_POST['type'];
+		if($type){
+			$sql="update t_info set `password` = '$n_passwd' where id=$id and `password` = '$o_passwd'";
 		}else{
-			$data['result'] = 0;
+			$sql="update s_info set `password` = '$n_passwd' where id=$id and `password` = '$o_passwd'";
 		}
-        
-        echo json_encode($data);
-    }
-	
-	public function change_passwd_t() {
-        $id=$_POST['id'];
-		$passwd=$_POST['passwd'];
-		$sql="update t_info set `password` = '$passwd' where id=$id";
-		//开始执行插入or更新命令
+		//echo $sql;break;
 		$result = mysql_query($sql);
-        
-		if ($result) {
+        //mysql_affected_rows()用来判断update是否成功
+		if (mysql_affected_rows()) {
 			$data['result'] = 1;
 		}else{
 			$data['result'] = 0;
@@ -336,12 +325,12 @@ class home extends controller {
 	
 }
 
-	function makeSql($lesson){
+function makeSql($lesson,$id){
 		$sql="UPDATE s_lesson
 			SET score = CASE c_id ";
 		foreach($lesson as $les){
 			$tmp="WHEN {$les['id']} THEN {$les['score']} ";
 			$sql.=$tmp;
 		}
-		return $sql."END WHERE s_id=139074277";
+		return $sql."END WHERE s_id=$id";
 	}

@@ -13,11 +13,8 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <link rel="shortcut icon" href="../../assets/img/favicon.png" type="image/x-icon" />
   <link href="../../assets/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="../../assets/css/font-awesome.min.css" rel="stylesheet" />
-  <link href="../../assets/css/weather-icons.min.css" rel="stylesheet" />
   
   <link href="../../assets/css/demo.min.css" rel="stylesheet" />
-  <link href="../../assets/css/typicons.min.css" rel="stylesheet" />
   <link href="../../assets/css/animate.min.css" rel="stylesheet" />
   <link href="../../assets/css/beyond.min.css" rel="stylesheet" type="text/css" />
 
@@ -26,13 +23,11 @@
 </head>
 
 <body>
-  <?php include '../header.php'; ?><!-- Main Container -->
+  <?php include '../header.php'; ?>
 
   <div class="main-container container-fluid">
-    <!-- Page Container -->
 
     <div class="page-container">
-      <!-- Page Content -->
 
       <div class="page-content" style="margin-left: 0;">
         <div class="page-body">
@@ -404,16 +399,15 @@
               </div>
             </div>
           </div>
-        </div><!-- /Page Body -->
+        </div>
       </div>
-    </div><!-- /Page Content -->
-  </div><!--Basic Scripts-->
-  <script src="../../assets/js/jquery-3.2.0.min.js">
-</script> <script src="../../assets/js/bootstrap.min.js">
-</script> <!--Beyond Scripts-->
-   <script src="../../assets/js/beyond.min.js">
-</script> <!--Page Related Scripts-->
-	<script src="../../assets/js/base.js"></script>
-	<script src="../../assets/js/index.js"></script>
+    </div>
+  </div>
+  <!--Basic Scripts-->
+  <script src="../../assets/js/jquery-3.2.0.min.js"></script> 
+  <script src="../../assets/js/bootstrap.min.js"></script>
+  <script src="../../assets/js/beyond.min.js"></script>
+  <script src="../../assets/js/base.js"></script>
+  <script src="../../assets/js/index.js"></script>
 </body>
 </html>

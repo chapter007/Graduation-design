@@ -10,30 +10,7 @@ $(document).ready(function () {
 	getLessonData(id);
 });
 
-function change_passwd(btn){
-	btn.text="请稍等";
-	var passwd=$("#n_passwd").val();
-	//alert(passwd);
-	$.ajax({
-        type: "post",
-        url: "../../index.php?c=home&a=change_passwd",
-        dataType: "json",
-        data: {
-			id:id,
-			passwd:passwd
-        },
-        async: true,
-        success: function (data) {
-            if(data.result==1){
-				alert('修改密码成功，请重新登录');
-				location.href="../../index.php";
-			}
-        },
-        error: function () {
-            alert('获取数据失败!');
-        }
-    });
-}
+
 
 function getData(id) {
     $.ajax({
@@ -54,7 +31,7 @@ function getData(id) {
 				$("#qq").val(student[3]);
 				$("#class").val(student[4]);
 				$("#teacher").val(student[5]);
-				$("#o_passwd").val(student[6]);
+				//$("#o_passwd").val(student[6]);
 				$("#welcome").text("欢迎光临："+student[1]);
 				$(".email").text("学号："+student[0]);
 				$(".username").text("姓名："+student[1]);
@@ -106,7 +83,7 @@ function update_info(btn){
 	var qq=$("#qq").val();
 	var myclass=$("#class").val();
 	var teacher=$("#teacher").val();
-	if(isNull(name)=="none"||isNull(mobile)=="none"||isNull(qq)=="none"||isNull(myclass)=="none"||isNull(teacher)=="none"){
+	if(isNull(name)||isNull(mobile)||isNull(qq)||isNull(myclass)||isNull(teacher)){
 		alert("请把信息填写完整再提交");
 		btn.text="保存";
 		return;
@@ -131,7 +108,7 @@ function update_info(btn){
 			btn.text="保存";
         },
         error: function () {
-            alert('获取数据失败!');
+            alert('更新数据失败，请正确填写信息格式!');
 			btn.text="保存";
         }
     });
@@ -192,11 +169,16 @@ function update_lesson_info(btn){
 	btn.text="请稍等";
 	var id=$("#s_id").val();
 	//TODO:获取到课程和评分的数据，会有多组
-	var lesson_num=$("td>input").size();
+	var lesson_num=$("td>input").length;
 	var lesson=new Array();
 	for(var i=0;i<lesson_num;i++){
 		var score=$("td>input:eq("+i+")").val();
 		var c_id=$("td>input:eq("+i+")").attr("c_id");
+		if(score<0||score>100||isNull(score)){
+			alert("请输入合理分数");
+			btn.text="保存";
+			return;
+		}
 		lesson[i]={id:c_id,score:score};
 	}
 	$.ajax({
@@ -212,10 +194,13 @@ function update_lesson_info(btn){
             if(data.result==1){
 				alert("更新数据成功");
 				btn.text="保存";
+			}else{
+				alert("更新数据失败");
+				btn.text="保存";
 			}
         },
         error: function () {
-            alert('获取数据失败!');
+            alert('更新数据失败!');
 			btn.text="保存";
         }
     });

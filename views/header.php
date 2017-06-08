@@ -22,11 +22,11 @@
 </div>
 
 <!--bootstrap原生的导航条修改-->
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default" style="border:1px solid #D2D2D2">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <a class="navbar-brand" href="#" style="color:#000;padding:10px;margin-top:6px">学生信息采集系统</a>
+      <a class="navbar-brand" href="#" style="color:#000;padding:10px;">学生信息采集系统</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->

@@ -32,10 +32,10 @@
                                 <div class="loginbox-title">登录</div>
 								<div style="width:80%;margin-left:10%">
 									<div class="loginbox-textbox" style="height: initial;">
-                                    <input type="text" class="form-control" style="max-width: none;" id="s_id" placeholder="学号" value="root"/>
+                                    <input type="text" class="form-control" style="max-width: none;" id="s_id" placeholder="学号"/>
                                 </div>
                                 <div class="loginbox-textbox" style="height: initial;">
-                                    <input type="password" class="form-control" style="max-width: none;" id="password" placeholder="密码" value="root"/>
+                                    <input type="password" class="form-control" style="max-width: none;" id="password" placeholder="密码"/>
                                 </div>
 								<div class="loginbox-forgot" style="height:10%">
                                     <a href="javascript:alert('默认密码是学号')">忘记密码?</a>

@@ -61,12 +61,14 @@ function getQueryString(name) {
 }
 
 function setPagination(totalData){
+	var pageCount=totalData/20;
 	$('#pagination').pagination({
 		totalData:totalData,
 		showData:20,
+		pageCount: pageCount,
 		current:page,
-		count:1,
-		coping:false
+		count:3,
+		coping:true
 	});
 	/* var page=Math.ceil(totalData/20);
 	var paginationCode="<ul class='pagination pagination-lg'><li id='page_1'><a href='./index.php?id="+id+"&page=1' style='z-index:0'>1 <span class='sr-only'>(current)</span></a></li>"+makeElementCode(page)+"</ul>";
